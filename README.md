@@ -18,7 +18,8 @@ A small Babylon.js playground for wandering a Blender-authored floating village 
 ## Demo
 
 <!-- AI: Replace both {demo_url} occurrences with the verified public demo URL. Check deployment configuration or a confirmed deployed site; do not assume a hosting URL. Keep the placeholder if no demo is available. -->
-* [{demo_url}]({demo_url})
+- [Play Citrus World](https://samuelasherrivello.github.io/babylon-lite-astra-blender-demo/)
+- [Download v0.1.0](https://github.com/SamuelAsherRivello/babylon-lite-astra-blender-demo/releases/tag/v0.1.0)
 
 ## Table of Contents
 
@@ -50,7 +51,7 @@ Use Node.js 24.12 or newer and npm. Asset authoring uses Blender; the tested loc
 <!-- AI: Describe the repository's existing release workflow in the fewest steps, based on checked-in workflows or release scripts. Distinguish builds, tags, releases, and deployment accurately. If no release process exists, retain a placeholder rather than inventing one. Documentation edits do not authorize publishing or changing Git history. -->
 1. Run `npm run check` and `npm run spec:validate`.
 2. Commit and push normally to `https://github.com/SamuelAsherRivello/babylon-lite-astra-blender-demo.git`; CI checks the project and stores the static build. The original checkout retains the inherited template `origin`: never push to that template remote. Use the explicit new-repository URL and intended branch.
-3. The optional **Deploy live demo** workflow deploys `dist/` when GitHub Pages is configured and manually dispatched. No live demo is claimed yet.
+3. Dispatch **Deploy live demo**, verify the live game, then create a new versioned GitHub release for the verified commit.
 
 ## Project Overview
 

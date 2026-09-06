@@ -26,7 +26,7 @@ WASD and the thumb joystick SHALL move camera-relative with normalized diagonals
 - **THEN** movement stops or slides along the safe boundary and the character remains on safe ground.
 
 ### Requirement: Independent centered camera
-Left-mouse world drag and touch world drag SHALL orbit a fixed world-center target without pan or player following. Wheel and accessible plus/minus controls SHALL zoom within bounds.
+Left-mouse world drag and touch world drag SHALL orbit a fixed world-center target without pan or player following. Mouse wheel SHALL zoom within bounds. The minimal release interface SHALL show the Citrus World heading, project subtitle, thumb joystick and movement instructions.
 
 #### Scenario: Orbit while moving
 - **WHEN** a player moves and orbits or zooms

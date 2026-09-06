@@ -4,9 +4,9 @@ Verified 2026-09-06. Change: `c004-gameplay-integration`. Proposal, specificatio
 
 ## Delivered behavior
 
-Little Citrus loads the final C002 world and C003 orange character in a right-handed Babylon scene, with no art scaling or corrective root rotation. A gameplay parent supplies world translation and travel yaw. The character remains at navigation groundY=0; actual displacement selects looping Idle/Walk clips.
+Citrus World loads the final C002 world and C003 orange character in a right-handed Babylon scene, with no art scaling or corrective root rotation. A gameplay parent supplies world translation and travel yaw. The character remains at navigation groundY=0; actual displacement selects looping Idle/Walk clips.
 
-WASD and the analog joystick produce normalized, camera-relative movement at 2m/s. Collision uses perimeter segment clearance, circle/box clearance and substepped sliding (at most 4cm per substep). Long frames are capped at 100ms. The camera target stays exactly [0,0,0], initial alpha/beta/radius are 0.96/0.96/26.5, radius limits are 12–27m, and tilt is bounded. Left drag and touch drag orbit; wheel and +/− zoom; ↺ restores the view. Pointer ownership prevents joystick gestures from reaching the camera, including concurrent touch pointers.
+WASD and the analog joystick produce normalized, camera-relative movement at 2m/s. Collision uses perimeter segment clearance, circle/box clearance and substepped sliding (at most 4cm per substep). Long frames are capped at 100ms. The camera target stays exactly [0,0,0], initial alpha/beta/radius are 0.96/0.96/26.5, radius limits are 12–27m, and tilt is bounded. Left drag and touch drag orbit; mouse wheel zooms. The user-approved minimal release UI has no separate zoom/reset buttons. Pointer ownership prevents joystick gestures from reaching the camera, including concurrent touch pointers.
 
 The 9:16 frame fits width and dynamic viewport height with phone safe-area padding, desktop/landscape letterboxing, restrained pastel styling and a cream joystick footer. Loading and retry states cover startup failure. WebGPU is preferred with the existing WebGL fallback. No new project dependencies or UI library were added.
 
@@ -26,7 +26,7 @@ Assets were copied for local integration testing but excluded from the C004 comm
 - Regression test covers Babylon Vector3 accessor coordinates so movement never relies on object spread to copy x/z.
 - Navigation tests cover frame-rate equivalence, polygon/box/circle clearance, concave and diagonal boundaries, long-frame thin-obstacle tunneling, safe spawn validation and wall sliding.
 
-## Real-browser acceptance
+## Initial real-browser acceptance (before release UI simplification)
 
 Chromium on Windows, Babylon 9.25 WebGPU. `tests/gameplay.browser.cjs` drives actual keyboard, mouse and CDP touch input, and reads the development-only `window.__littleCitrus.snapshot()` for precise assertions. No gameplay mutation is exposed by that hook, and it is absent from production builds.
 
@@ -71,3 +71,7 @@ Worktree: `C:/Users/srive/.codex/worktrees/cc2a/babylon-lite-astra-blender-demo`
 ## v0.1.0 release candidate
 
 The reviewed local release includes the Citrus World title, simplified joystick footer and panoramic sky. Browser zoom buttons were removed in that snapshot; the current acceptance suite covers its wheel zoom behavior. Chrome and Microsoft Edge both passed full gameplay checks at localhost5180 with no console errors. QA now creates and closes its own disposable browser context: caller dimensions and API state stay untouched, and all mouse/key/touch state and temporary tabs are discarded on failure. An injected first-viewport-change failure from a native caller kept viewportSize=null, actual1031x604 and browser context count unchanged. This supersedes the earlier direct-CDP cleanup approach and its no-override limitation.
+
+## Published v0.1.0 build
+
+GitHub Pages run34020483443 deployed main9a36ba53b81869825b7a309225e3fdd429aa8224 successfully. The public page at https://samuelasherrivello.github.io/babylon-lite-astra-blender-demo/ was opened in real Chrome: world GLB, navigation and character GLB all returned200, WebGPU rendered Citrus World, and no console errors occurred during keyboard movement, mouse orbit and wheel zoom. The development QA hook was absent. README's sole gameplay screenshot, docs/images/gameplay.png, was captured from that public page after reloading to its default view. The release archive is packaged from this exact GitHub Pages build artifact. A subsequent documentation commit adds the verified URLs and screenshot without changing runtime code.
