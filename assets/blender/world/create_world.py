@@ -189,6 +189,9 @@ for i in range(8):
 box('Chimney shaft',-1.48,-2.72,3.84,.42,.43,1.07,'TowerLavender',.035)
 box('Chimney rim',-1.48,-2.72,4.37,.56,.56,.15,'IvoryTrim',.025)
 box('Chimney dark inset',-1.48,-2.72,4.452,.33,.33,.012,'TimberDark')
+emitter=bpy.data.objects.new('VFX_Chimney',None)
+bpy.context.collection.objects.link(emitter)
+emitter.location=p(-1.48,-2.72,4.458)
 for h in [3.52,3.82,4.12]:
     box('Chimney masonry accent',-1.7,-2.63,h,.018,.2,.085,'IvoryTrim',.01)
 # Arched mint door and little sunset window.
@@ -280,7 +283,8 @@ def tree(name,x,z,size=1,pink=False):
         beam(name+' branch',(x,z,.74*size),(x+dx*size,z+dz*size,1.51*size),.047*size,'Timber')
     for i,(dx,dz,h,s) in enumerate([(-.35,.03,1.72,.67),(.3,.08,1.83,.7),(.04,-.29,2.04,.65),(0,.12,2.31,.54)]):
         col=['BlossomPink','BlossomLight'][i%2] if pink else ['LeafSeafoam','LeafPale','LeafDark'][i%3]
-        ico(name+' faceted crown',x+dx*size,z+dz*size,h*size,(s*size,s*size,s*size),col,2)
+        crown=ico(name+' faceted crown',x+dx*size,z+dz*size,h*size,(s*size,s*size,s*size),col,2)
+        crown['vfx_binding']='VFX_Foliage_'+name.replace(' ','_')+'_'+str(i)
     obstacle_circle(name,x,z,.22*size)
 
 tree('Blossom tree',-4.02,-3.92,1.22,True)
@@ -288,8 +292,9 @@ tree('Front west pear tree',-3.72,3.18,.85)
 tree('Front east pear tree',3.8,3.25,.84)
 def pine(name,x,z,s):
     cone(name+' trunk',x,z,.25*s,.1*s,.09*s,.5*s,'Timber')
-    for h,r in [(.68,.59),(1.12,.47),(1.52,.32)]:
-        cone(name+' tier',x,z,h*s,r*s,0,.91*s,'MintShade' if h==.68 else 'MintLight',7)
+    for i,(h,r) in enumerate([(.68,.59),(1.12,.47),(1.52,.32)]):
+        tier=cone(name+' tier',x,z,h*s,r*s,0,.91*s,'MintShade' if h==.68 else 'MintLight',7)
+        tier['vfx_binding']='VFX_Foliage_'+name.replace(' ','_')+'_'+str(i)
     obstacle_circle(name,x,z,.4*s)
 pine('East spruce',4.16,.01,.93)
 pine('West spruce',-4.1,.7,.77)
@@ -384,12 +389,19 @@ scene.render.filepath=str(HERE/'world.preview.png')
 bpy.ops.wm.save_as_mainfile(filepath=str(HERE/'world.blend'))
 bpy.ops.render.render(write_still=True)
 
-# Export copies grouped by material. Preserve rich source organization in .blend.
+# Static copies stay batched; animated crowns and each water plane retain bindings.
 source=[o for o in scene.objects if o.type=='MESH']
 exports=[]
-for matname in sorted(M):
-    group=[o for o in source if o.data.materials and o.data.materials[0].name==matname]
-    if not group: continue
+groups={}
+for obj in source:
+    matname=obj.data.materials[0].name
+    key=obj.get('vfx_binding')
+    if matname in ('Water','WaterLight'):
+        surface='River' if obj.name.startswith('Stream') else ('FallSouth' if obj.location.y<0 else 'FallNorth')
+        key='VFX_Water_'+surface+'_'+matname
+    key=key or 'World_'+matname
+    groups.setdefault(key,[]).append(obj)
+for key,group in sorted(groups.items()):
     bpy.ops.object.select_all(action='DESELECT')
     copies=[]
     for obj in group:
@@ -397,14 +409,22 @@ for matname in sorted(M):
         dup.select_set(True); copies.append(dup)
     bpy.context.view_layer.objects.active=copies[0]
     if len(copies)>1: bpy.ops.object.join()
-    joined=bpy.context.object; joined.name='World_'+matname
+    joined=bpy.context.object; joined.name=key
     joined.data.name=joined.name
+    if key.startswith('VFX_Water_'):
+        uv=joined.data.uv_layers.active or joined.data.uv_layers.new(name='Flow')
+        for loop in joined.data.loops:
+            v=joined.matrix_world@joined.data.vertices[loop.vertex_index].co
+            # glTF flips V. Runtime +V follows +Z on river and +Y on falls.
+            along=-v.y if '_River_' in key else v.z
+            uv.data[loop.index].uv=(v.x*.8,1-along*.8)
     exports.append(joined)
 bpy.ops.object.select_all(action='DESELECT')
 for obj in exports: obj.select_set(True)
+emitter.select_set(True)
 bpy.context.view_layer.objects.active=exports[0]
 bpy.ops.export_scene.gltf(filepath=str(OUT/'world.glb'),export_format='GLB',
     use_selection=True,export_yup=True,export_apply=True,export_animations=False,
-    export_cameras=False,export_lights=False,export_texcoords=False,export_normals=True,
+    export_cameras=False,export_lights=False,export_texcoords=True,export_normals=True,
     export_materials='EXPORT')
 print('C002 world built:',len(source),'source meshes;',len(exports),'export meshes')

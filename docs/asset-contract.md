@@ -1,5 +1,22 @@
 # Shared asset contract
 
+## C005 environmental effect bindings
+
+Static world geometry remains grouped by material. These exported node names are reserved for runtime VFX:
+
+| Binding | Meaning |
+| --- | --- |
+| `VFX_Foliage_Blossom_tree_0` through `_3` | Four independent blossom crowns |
+| `VFX_Foliage_Front_west_pear_tree_0` through `_3` | Four west pear crowns |
+| `VFX_Foliage_Front_east_pear_tree_0` through `_3` | Four east pear crowns |
+| `VFX_Foliage_East_spruce_0` through `_2` | Three east spruce tiers |
+| `VFX_Foliage_West_spruce_0` through `_2` | Three west spruce tiers |
+| `VFX_Foliage_Rear_spruce_0` through `_2` | Three rear spruce tiers |
+| `VFX_Water_{River,FallSouth,FallNorth}_{Water,WaterLight}` | Six meshes grouped into three reflection planes; WaterLight contains the corresponding glints/ribbons |
+| `VFX_Chimney` | Empty emitter node at runtime `(-1.48, 4.458, -2.72)` |
+
+Foliage keeps its original center pivot, position, scale and local geometry. Trunks, branches, roof pieces and other decorations are excluded even when they share foliage materials. Each binding must resolve exactly once. Water UVs project runtime X to U; runtime Z on the river and runtime Y on falls map to V, at 0.8 repeats/meter after glTF's V conversion. South means the positive-Z fall. No external texture is required: runtime generates ripple normals. The independent world verifier checks the bindings, UVs, emitter location, pivots and bidirectional geometric equivalence after reimport.
+
 This contract is the interface between C001 setup, C002 world, C003 character, and C004 integration.
 
 ## Coordinates and exports
