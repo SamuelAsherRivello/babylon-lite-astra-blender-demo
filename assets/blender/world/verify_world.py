@@ -6,6 +6,7 @@ import struct
 from pathlib import Path
 from collections import deque
 from mathutils import Vector
+from mathutils.kdtree import KDTree
 
 HERE=Path(__file__).resolve().parent
 OUT=HERE.parents[2]/'public/assets/world'
@@ -54,6 +55,13 @@ source=[o for o in bpy.context.scene.objects if o.type=='MESH']
 assert len(source)>300
 assert bpy.context.scene.unit_settings.scale_length==1
 source_vertices=[o.matrix_world@v.co for o in source for v in o.data.vertices]
+foliage_bindings={o['vfx_binding']:o.location.copy() for o in source if 'vfx_binding' in o}
+assert len(foliage_bindings)==21
+assert all(('faceted crown' in o.name or ' tier' in o.name) and 'Tower' not in o.name
+           for o in source if 'vfx_binding' in o), 'Only tree foliage can be animated'
+anchor_position=bpy.data.objects['VFX_Chimney'].location.copy()
+opening=bpy.data.objects['Chimney dark inset']
+assert abs(anchor_position.z-max((opening.matrix_world@v.co).z for v in opening.data.vertices))<1e-5
 source_bounds=[[min(v[i] for v in source_vertices),max(v[i] for v in source_vertices)] for i in range(3)]
 ground=[o for o in source if o.name.startswith(('West bank flat grass','East bank flat grass','Bridge flush plank'))]
 assert len(ground)==14
@@ -85,20 +93,36 @@ assert not gltf.get('animations') and not gltf.get('cameras')
 triangles=sum(gltf['accessors'][p['indices']]['count']//3 for m in gltf['meshes'] for p in m['primitives'])
 assert triangles<60000 and len(blob)<8_000_000
 assert all('pbrMetallicRoughness' in m for m in gltf['materials'])
+names=[n['name'] for n in gltf['nodes']]
+assert all(names.count(name)==1 for name in [*foliage_bindings,'VFX_Chimney'])
+water_names=['VFX_Water_'+surface+'_'+mat for surface in ['River','FallSouth','FallNorth'] for mat in ['Water','WaterLight']]
+assert all(names.count(name)==1 for name in water_names)
+assert all('TEXCOORD_0' in p['attributes'] for m in gltf['meshes'] if m['name'] in water_names for p in m['primitives'])
 bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
 bpy.ops.import_scene.gltf(filepath=str(OUT/'world.glb'))
 imported=[o for o in bpy.context.scene.objects if o.type=='MESH']
 vertices=[o.matrix_world@v.co for o in imported for v in o.data.vertices]
+for name,position in foliage_bindings.items():
+    assert (bpy.data.objects[name].location-position).length<1e-5, 'Foliage pivot changed: '+name
+assert (bpy.data.objects['VFX_Chimney'].location-anchor_position).length<1e-5
+# Vertex splitting for UVs is permitted; the geometric point set must be identical.
+for original,other in [(source_vertices,vertices),(vertices,source_vertices)]:
+    lookup=KDTree(len(other))
+    for i,v in enumerate(other): lookup.insert(v,i)
+    lookup.balance()
+    assert all(lookup.find(v)[2]<1e-4 for v in original), 'Export changed rest geometry'
 bounds=[[min(v[i] for v in vertices),max(v[i] for v in vertices)] for i in range(3)]
 assert all(abs(source_bounds[i][j]-bounds[i][j])<1e-4 for i in range(3) for j in range(2)), 'Export changed coordinate bounds'
 runtime_bounds=dict(x=bounds[0],y=bounds[2],z=[-bounds[1][1],-bounds[1][0]])
 report=dict(blenderVersion=bpy.app.version_string,sourceMeshes=len(source),exportMeshes=len(imported),
+    foliageUnits=len(foliage_bindings),waterGroups=water_names,chimneyRuntime=[anchor_position.x,anchor_position.z,-anchor_position.y],
     triangles=triangles,materials=len(gltf['materials']),glbBytes=len(blob),runtimeBounds=runtime_bounds,
     meshNames=[m['name'] for m in gltf['meshes']],navigationObstacles=len(nav['obstacles']),
     safeGridSamples=len(grid),reachableGridSamples=len(seen),gridSpacingMeters=.1,
     groundSupportSamples=len(grid),checks=['blend reopen','meter scale','flat ground and bridge',
     'ground support raycasts','visible stream above foundation','GLB header and embedded PBR',
     'triangle and file budget','GLB reimport bounds','convex simple perimeter',
-    'spawn disk clearance','connected radius-inflated navigation','bridge route clearance'])
+    'spawn disk clearance','connected radius-inflated navigation','bridge route clearance',
+    '21 isolated foliage pivots','three water groups with flow UVs','chimney anchor alignment','bidirectional rest geometry equivalence'])
 (HERE/'world.validation.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

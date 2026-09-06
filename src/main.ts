@@ -15,6 +15,7 @@ import { selectEngine } from './engine-selection';
 import { bindControls, cameraRelative, constrainCamera } from './controls';
 import { isWalkable, moveOnGround, validateNavigation } from './navigation';
 import { addSky } from './sky';
+import { createVfx } from './vfx';
 import './style.css';
 
 const canvas = document.querySelector<HTMLCanvasElement>('#renderCanvas')!;
@@ -25,8 +26,10 @@ const base = import.meta.env.BASE_URL;
 let dispose = () => {};
 
 async function start() {
+  const qa = import.meta.env.DEV || import.meta.env.MODE === 'qa';
+  const qaOptions = qa ? new URLSearchParams(location.search) : new URLSearchParams();
   const { engine, renderer } = await selectEngine({
-    supportsWebGPU: () => WebGPUEngine.IsSupportedAsync,
+    supportsWebGPU: () => qaOptions.get('renderer') === 'webgl' ? Promise.resolve(false) : WebGPUEngine.IsSupportedAsync,
     createWebGPU: () => new WebGPUEngine(canvas, { antialias: true }),
     createWebGL: () => new Engine(canvas, true),
   });
@@ -81,15 +84,17 @@ async function start() {
     mesh.receiveShadows = true;
     if (mesh.getTotalVertices() > 0) shadow.addShadowCaster(mesh, false);
   }
+  const effects = qaOptions.get('vfx') === 'off' ? undefined : createVfx(scene, world.meshes);
   await scene.whenReadyAsync();
   loading.hidden = true; status.textContent = 'Your little world is ready.';
   canvas.dataset.renderer = renderer; canvas.dataset.ready = 'true';
-  if (import.meta.env.DEV) {
+  if (qa) {
     (window as Window & { __littleCitrus?: unknown }).__littleCitrus = { snapshot: () => ({
       renderer, player: { x: player.position.x, y: player.position.y, z: player.position.z, yaw: player.rotation.y },
       animation, clips: character.animationGroups.map(g => ({ name: g.name, playing: g.isPlaying })),
       camera: { alpha: camera.alpha, beta: camera.beta, radius: camera.radius, target: camera.target.asArray() },
       input: inputs.read(), safe: isWalkable(player.position, nav), meshes: world.meshes.length,
+      vfx: effects?.snapshot(),
     }) };
   }
   engine.resize();
@@ -104,7 +109,7 @@ async function start() {
     if (desired !== animation) {
       (moving ? idle : walk).stop(); (moving ? walk : idle).start(true); animation = desired;
     }
-    applyCamera(); scene.render();
+    applyCamera(); effects?.update(document.hidden ? 0 : engine.getDeltaTime() / 1000); scene.render();
   });
 }
 

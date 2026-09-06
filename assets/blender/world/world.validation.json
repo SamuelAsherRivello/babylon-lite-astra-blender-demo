@@ -1,10 +1,24 @@
 {
   "blenderVersion": "5.2.1 LTS",
   "sourceMeshes": 634,
-  "exportMeshes": 39,
+  "exportMeshes": 61,
+  "foliageUnits": 21,
+  "waterGroups": [
+    "VFX_Water_River_Water",
+    "VFX_Water_River_WaterLight",
+    "VFX_Water_FallSouth_Water",
+    "VFX_Water_FallSouth_WaterLight",
+    "VFX_Water_FallNorth_Water",
+    "VFX_Water_FallNorth_WaterLight"
+  ],
+  "chimneyRuntime": [
+    -1.4800000190734863,
+    4.458000183105469,
+    -2.7200000286102295
+  ],
   "triangles": 15215,
   "materials": 39,
-  "glbBytes": 1015156,
+  "glbBytes": 1319756,
   "runtimeBounds": {
     "x": [
       -5.224394798278809,
@@ -20,8 +34,33 @@
     ]
   },
   "meshNames": [
-    "World_BlossomLight",
-    "World_BlossomPink",
+    "VFX_Foliage_Blossom_tree_0",
+    "VFX_Foliage_Blossom_tree_1",
+    "VFX_Foliage_Blossom_tree_2",
+    "VFX_Foliage_Blossom_tree_3",
+    "VFX_Foliage_East_spruce_0",
+    "VFX_Foliage_East_spruce_1",
+    "VFX_Foliage_East_spruce_2",
+    "VFX_Foliage_Front_east_pear_tree_0",
+    "VFX_Foliage_Front_east_pear_tree_1",
+    "VFX_Foliage_Front_east_pear_tree_2",
+    "VFX_Foliage_Front_east_pear_tree_3",
+    "VFX_Foliage_Front_west_pear_tree_0",
+    "VFX_Foliage_Front_west_pear_tree_1",
+    "VFX_Foliage_Front_west_pear_tree_2",
+    "VFX_Foliage_Front_west_pear_tree_3",
+    "VFX_Foliage_Rear_spruce_0",
+    "VFX_Foliage_Rear_spruce_1",
+    "VFX_Foliage_Rear_spruce_2",
+    "VFX_Foliage_West_spruce_0",
+    "VFX_Foliage_West_spruce_1",
+    "VFX_Foliage_West_spruce_2",
+    "VFX_Water_FallNorth_Water",
+    "VFX_Water_FallNorth_WaterLight",
+    "VFX_Water_FallSouth_Water",
+    "VFX_Water_FallSouth_WaterLight",
+    "VFX_Water_River_Water",
+    "VFX_Water_River_WaterLight",
     "World_Brass",
     "World_CliffLavender",
     "World_CliffWarm",
@@ -35,7 +74,6 @@
     "World_GrassSage",
     "World_IvoryTrim",
     "World_LeafDark",
-    "World_LeafPale",
     "World_LeafSeafoam",
     "World_Mint",
     "World_MintLight",
@@ -53,8 +91,6 @@
     "World_TimberDark",
     "World_TowerLavender",
     "World_TowerShade",
-    "World_Water",
-    "World_WaterLight",
     "World_WindowBlue",
     "World_WindowGlow",
     "World_WoodHoney",
@@ -77,6 +113,10 @@
     "convex simple perimeter",
     "spawn disk clearance",
     "connected radius-inflated navigation",
-    "bridge route clearance"
+    "bridge route clearance",
+    "21 isolated foliage pivots",
+    "three water groups with flow UVs",
+    "chimney anchor alignment",
+    "bidirectional rest geometry equivalence"
   ]
 }

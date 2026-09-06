@@ -2,7 +2,7 @@
 
 Verified 2026-09-06 using Blender 5.2.1 LTS. Change: `c002-floating-village-world`.
 
-## Delivery
+## Original C002 delivery (before the C005 extension below)
 
 - `assets/blender/world/create_world.py`: deterministic file-relative world builder (seed 2206).
 - `assets/blender/world/verify_world.py`: independent source reopen, export import and navigation verification.
@@ -54,3 +54,10 @@ Export node and mesh names use `World_<material>`: BlossomLight, BlossomPink, Br
 - `openspec validate c002-floating-village-world --strict` passes. Browser camera, lighting, character scale and actual controller behavior remain C004 integration acceptance.
 
 No common source, README, package, lockfile, configuration or C001 content is part of this delivery. The temporary ignored OpenSpec config copy only bootstrapped the CLI in the template worktree.
+# C005 VFX export extension — 2026-09-06
+
+The world now exports 61 meshes, including 21 independent foliage units, six water meshes in three surface groups, and a `VFX_Chimney` transform node. Rest composition and 15,215 triangles are unchanged. GLB size is 1,319,756 bytes; all 39 materials remain embedded and texture images remain absent. Exact bindings are in `docs/asset-contract.md`.
+
+Rebuilt with `npm run blender -- --background --factory-startup --python assets/blender/world/create_world.py` using Blender 5.2.1 LTS, then verified with `npm run blender -- --background --factory-startup --python assets/blender/world/verify_world.py`. Both completed successfully. The new verifier passes UV/binding checks, all 21 pivots, chimney-opening alignment, and bidirectional source/export vertex equivalence, alongside the existing 4,540 safe navigation samples and geometry/budget checks. The regenerated `.blend`, preview, GLB, and `world.validation.json` are the delivery artifacts.
+
+Navigation SHA256 before and after rebuilding: `D07409DC542ADE666D4036C268A6E1CDD684B24A2DBBE31C1D3A2E33E4EAF0B2`. Runtime bounds remain unchanged. See `C005-vfx.md` for runtime effect and browser evidence once integration is complete.
