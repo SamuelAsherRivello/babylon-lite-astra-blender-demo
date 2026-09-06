@@ -35,18 +35,18 @@ A small Babylon.js playground for wandering a Blender-authored floating village 
 <!-- AI: Briefly state required tools or prerequisites, using versions supported by the repository. Keep setup steps in the subsections below and use the fewest practical steps. Do not add a separate commands section. -->
 Use Node.js 24.12 or newer and npm. Asset authoring uses Blender; the tested local installation is Steam Blender 5.2.1 LTS.
 
-### 📦 Build Project
+### 🛠 Build Project
 
 <!-- AI: Replace {command} with the actual build command or required editor action. Verify it against manifests, scripts, or project settings. Specify the working directory and dependency installation when necessary; do not assume npm or a particular engine. -->
 1. From the repository root, run `npm ci`.
 2. Run `npm run check` to test, check types and build `dist/`.
 
-### 📦 Run Project
+### 🛠 Run Project
 
 <!-- AI: Replace {command} with the actual local launch command or editor action. State where to run it and how to open the app if needed. Refer to the printed URL when the port can vary. Avoid repeating completed build/setup steps. -->
 1. Run `npm run dev` from the repository root and open the printed localhost URL.
 
-### 📦 Release Version
+### 🛠 Release Version
 
 <!-- AI: Describe the repository's existing release workflow in the fewest steps, based on checked-in workflows or release scripts. Distinguish builds, tags, releases, and deployment accurately. If no release process exists, retain a placeholder rather than inventing one. Documentation edits do not authorize publishing or changing Git history. -->
 1. Run `npm run check` and `npm run spec:validate`.
