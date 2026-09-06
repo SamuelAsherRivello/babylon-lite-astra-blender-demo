@@ -5,12 +5,14 @@
 # Babylon Lite Astra Blender Demo
 
 <!-- AI: Replace {PROJECT_NAME} with the requested project display name. Write one short introduction sentence explaining what the project does and who it is for, based on implemented behavior. -->
-A minimal Babylon.js browser foundation for a Blender-authored floating island and animated character demo.
+A small Babylon.js playground for wandering a Blender-authored floating village with an animated orange character.
 
 ## Images
 
 <!-- AI: Use screenshots that exist in this repository and represent the current project. Keep relative paths, matching link href and image src, and the 400-pixel preview width. Replace placeholder alt text with a brief description. Preserve image order unless instructed otherwise; do not invent asset paths. -->
-Current game screenshots will be added after the world and character are integrated.
+<a href="docs/images/c004-portrait.png"><img src="docs/images/c004-portrait.png" width="400" alt="Little Citrus floating village with orange character and thumb joystick" /></a>
+
+<a href="docs/images/c004-desktop.png"><img src="docs/images/c004-desktop.png" width="400" alt="Desktop letterboxed portrait game" /></a>
 
 
 ## Demo
@@ -47,13 +49,15 @@ Use Node.js 24.12 or newer and npm. Asset authoring uses Blender; the tested loc
 
 <!-- AI: Describe the repository's existing release workflow in the fewest steps, based on checked-in workflows or release scripts. Distinguish builds, tags, releases, and deployment accurately. If no release process exists, retain a placeholder rather than inventing one. Documentation edits do not authorize publishing or changing Git history. -->
 1. Run `npm run check` and `npm run spec:validate`.
-2. Commit and push normally; CI checks the project and stores the static build.
+2. Commit and push normally to `https://github.com/SamuelAsherRivello/babylon-lite-astra-blender-demo.git`; CI checks the project and stores the static build. The original checkout retains the inherited template `origin`: never push to that template remote. Use the explicit new-repository URL and intended branch.
 3. The optional **Deploy live demo** workflow deploys `dist/` when GitHub Pages is configured and manually dispatched. No live demo is claimed yet.
 
 ## Project Overview
 
 <!-- AI: Summarize the project's purpose, main capabilities, and intended use cases. Describe current implementation; label planned capabilities explicitly rather than presenting them as complete. Keep detailed tooling under Project Details. -->
-The current shell renders a sample cube using WebGPU when available, with WebGL fallback. World, character and gameplay are planned in C002, C003 and C004.
+Little Citrus presents a pastel cottage, mint-roof tower, stream and bridge inside a 9:16 frame that fits both viewport dimensions. The orange character walks with WASD or the thumb joystick, faces its direction of travel, and switches between Idle and Walk. Radius-aware navigation keeps it on the island and clear of buildings, trees and water.
+
+Drag the world with the left mouse button or a finger to orbit its fixed center. Scroll or use the +/− buttons to zoom; ↺ restores the initial view. The camera stays independent of the character. Joystick release, cancellation, focus loss and resizing clear active input.
 
 ### 📝 Documentation
 
@@ -61,6 +65,8 @@ The current shell renders a sample cube using WebGPU when available, with WebGL 
 - [Asset contract](docs/asset-contract.md): Coordinates, authoring paths, animations and navigation.
 - [Setup provenance](docs/template-provenance.md): Template history and active planning root.
 - [Coordination request](docs/coordination/request.md): Approved scope and task boundaries.
+- [Blender toolchain](docs/blender-toolchain.md): Project-local Blender and MCP setup and verification.
+- [Gameplay verification](docs/coordination/C004-gameplay.md): Controls, browser acceptance and screenshot evidence.
 
 ### 📝 Structure
 
@@ -77,7 +83,7 @@ The current shell renders a sample cube using WebGPU when available, with WebGL 
 ## Project Details
 
 <!-- AI: Replace this placeholder with a short description of implementation details useful to developers. Verify the stack from repository files and avoid repeating the overview or claiming unverified package versions. -->
-TypeScript and Vite bundle Babylon.js core and glTF loaders. Native HTML/CSS supplies the shell. `npm test` runs renderer fallback tests; `npm run blender -- --version` discovers Blender without changing global settings.
+TypeScript and Vite bundle Babylon.js core and glTF loaders, preferring WebGPU with WebGL fallback. Native HTML/CSS supplies the shell without a UI library. `npm test` covers renderer fallback, camera-relative input, fixed-center camera limits and radius-aware navigation. The reproducible browser script is documented in the gameplay handoff. `npm run blender -- --version` discovers Blender without changing global settings.
 
 ### 📦 AI
 

@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#171c2d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#e7eae3" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='37' r='24' fill='%23e9a263'/%3E%3Cpath d='M32 14Q35 0 49 6Q44 19 32 14' fill='%237c9c70'/%3E%3C/svg%3E" />
     <title>Babylon Lite Astra Blender Demo</title>
   </head>
   <body>
-    <main class="app">
-      <header><p class="eyebrow">BABYLON + BLENDER</p><h1>A little world, taking shape.</h1><p id="status" role="status">Starting renderer…</p></header>
-      <canvas id="renderCanvas" aria-label="Babylon.js setup scene"></canvas>
-      <footer>Project foundation · World and character assets are being authored separately.</footer>
+    <main class="game" aria-label="Little Citrus floating village">
+      <canvas id="renderCanvas" tabindex="0" aria-label="Floating village. WASD to walk, drag to orbit, scroll to zoom."></canvas>
+      <header class="heading"><p class="eyebrow"><span></span> A LITTLE WORLD TO WANDER</p><h1>Little Citrus<span>Floating village</span></h1></header>
+      <div class="view-controls" aria-label="Camera controls"><button id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button><button id="reset-view" aria-label="Reset view" title="Reset view">↺</button></div>
+      <div id="loading" class="loading"><span class="loading-dot"></span><p id="status" role="status">Growing your little world…</p><button id="retry" hidden>Try again</button></div>
+      <footer class="controls"><div class="control-caption"><span class="tiny-sun">✳</span><strong>Take the slow way.</strong><p>Drag the world to look around.</p></div><div id="joystick" class="joystick" role="group" aria-label="Movement joystick. Drag to walk or use WASD."><i class="direction up">⌃</i><i class="direction right">›</i><i class="direction down">⌄</i><i class="direction left">‹</i><div id="joystick-knob" class="joystick-knob"><span></span></div></div><p class="movement-hint">DRAG TO WANDER <span>· WASD</span></p><div class="footer-line"><span>MADE FOR A MOMENT OF CALM</span><span class="sound-mark">✦</span></div></footer>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
