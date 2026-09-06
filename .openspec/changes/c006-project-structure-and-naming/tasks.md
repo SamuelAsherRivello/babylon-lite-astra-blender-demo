@@ -12,7 +12,7 @@
 ## 3. Consolidate OpenSpec
 
 - [x] 3.1 C006 Preserve the inherited hidden tree under `.openspec/history/template/`, then move active Citrus config, changes and specs into `.openspec/`; verify template hashes and that all current Citrus change IDs, artifacts and task checkbox states survive, including C006 itself.
-- [ ] 3.2 C006 Add the local OpenSpec launcher, npm `spec` command and routed `spec:validate`, with a persistent ignored alias, local configuration and preserved CLI output/exit status; verify Windows junction and Linux symlink fixture tests cover first creation, reuse, concurrent creation, child failure and wrong-target/broken-alias/real-directory refusal without changing target contents.
+- [x] 3.2 C006 Add the local OpenSpec launcher, npm `spec` command and routed `spec:validate`, with a persistent ignored alias, local configuration and preserved CLI output/exit status; verify Windows junction and Linux symlink fixture tests cover first creation, reuse, concurrent creation, child failure and wrong-target/broken-alias/real-directory refusal without changing target contents.
 - [x] 3.3 C006 Update active planning config, root agent guidance and local skill command examples for canonical `.openspec/`, launcher use and the local shortcut; verify root and nested-package context/list/status/instructions/strict validation resolve Citrus planning, exclude template history, preserve the valid alias after success/failure and track only canonical paths.
 
 ## 4. Update consumers of project paths
@@ -23,7 +23,7 @@
 
 ## 5. Verify the integrated migration
 
-- [ ] 5.1 C006 Run the nested package check and strict canonical OpenSpec validation after all path edits; verify both succeed, binary/navigation hashes match the baseline, and a Linux CI run passes before declaring cross-platform verification complete.
+- [x] 5.1 C006 Run the nested package check and strict canonical OpenSpec validation after all path edits; verify both succeed, binary/navigation hashes match the baseline, and a Linux CI run passes before declaring cross-platform verification complete.
 - [x] 5.2 C006 Run the built preview in dedicated installed Chrome and Edge test sessions; verify GLB/navigation loads, portrait fit and centering, existing keyboard/joystick movement and camera controls, with no new console errors, then restore and verify original viewport/input state in `finally` and record the exact browser surfaces.
 - [x] 5.3 C006 Deliver `CITRUS_WORLD/documentation/coordination/C006-structure.md` with path/hash mapping, commands/results and any pre-existing failures; verify the final diff preserves unrelated C005 edits, contains no local runtime or secrets, and leaves only canonical tracked project/documentation/planning locations.
 
