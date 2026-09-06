@@ -1,0 +1,82 @@
+{
+  "blenderVersion": "5.2.1 LTS",
+  "sourceMeshes": 634,
+  "exportMeshes": 39,
+  "triangles": 15215,
+  "materials": 39,
+  "glbBytes": 1015156,
+  "runtimeBounds": {
+    "x": [
+      -5.224394798278809,
+      5.025000095367432
+    ],
+    "y": [
+      -2.059999942779541,
+      5.199999809265137
+    ],
+    "z": [
+      -5.127076625823975,
+      5.127077102661133
+    ]
+  },
+  "meshNames": [
+    "World_BlossomLight",
+    "World_BlossomPink",
+    "World_Brass",
+    "World_CliffLavender",
+    "World_CliffWarm",
+    "World_CreamPlaster",
+    "World_FlowerGold",
+    "World_FlowerPink",
+    "World_FlowerWhite",
+    "World_Foam",
+    "World_GrassLight",
+    "World_GrassMoss",
+    "World_GrassSage",
+    "World_IvoryTrim",
+    "World_LeafDark",
+    "World_LeafPale",
+    "World_LeafSeafoam",
+    "World_Mint",
+    "World_MintLight",
+    "World_MintShade",
+    "World_Rock",
+    "World_RockLight",
+    "World_RoofBlush",
+    "World_RoofEdge",
+    "World_RoofPink",
+    "World_RoofRose",
+    "World_SoilLight",
+    "World_SoilRose",
+    "World_Stem",
+    "World_Timber",
+    "World_TimberDark",
+    "World_TowerLavender",
+    "World_TowerShade",
+    "World_Water",
+    "World_WaterLight",
+    "World_WindowBlue",
+    "World_WindowGlow",
+    "World_WoodHoney",
+    "World_WoodLight"
+  ],
+  "navigationObstacles": 19,
+  "safeGridSamples": 4540,
+  "reachableGridSamples": 4540,
+  "gridSpacingMeters": 0.1,
+  "groundSupportSamples": 4540,
+  "checks": [
+    "blend reopen",
+    "meter scale",
+    "flat ground and bridge",
+    "ground support raycasts",
+    "visible stream above foundation",
+    "GLB header and embedded PBR",
+    "triangle and file budget",
+    "GLB reimport bounds",
+    "convex simple perimeter",
+    "spawn disk clearance",
+    "connected radius-inflated navigation",
+    "bridge route clearance"
+  ]
+}

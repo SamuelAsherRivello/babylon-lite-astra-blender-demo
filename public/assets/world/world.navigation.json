@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "groundY": 0,
+  "bounds": {
+    "minX": -5,
+    "maxX": 5,
+    "minZ": -5,
+    "maxZ": 5
+  },
+  "walkablePolygon": [
+    [
+      -4.25,
+      -5
+    ],
+    [
+      4.25,
+      -5
+    ],
+    [
+      5,
+      -4.25
+    ],
+    [
+      5,
+      4.25
+    ],
+    [
+      4.25,
+      5
+    ],
+    [
+      -4.25,
+      5
+    ],
+    [
+      -5,
+      4.25
+    ],
+    [
+      -5,
+      -4.25
+    ]
+  ],
+  "spawn": {
+    "x": -1.6,
+    "z": 2.8
+  },
+  "characterRadius": 0.25,
+  "obstacles": [
+    {
+      "id": "stream-north",
+      "type": "box",
+      "minX": 0.05,
+      "maxX": 1.15,
+      "minZ": -5,
+      "maxZ": 0.45
+    },
+    {
+      "id": "stream-south",
+      "type": "box",
+      "minX": 0.05,
+      "maxX": 1.15,
+      "minZ": 2.35,
+      "maxZ": 5
+    },
+    {
+      "id": "cottage",
+      "type": "box",
+      "minX": -3.65,
+      "maxX": -0.28,
+      "minZ": -3.43,
+      "maxZ": -0.23
+    },
+    {
+      "id": "tower",
+      "type": "circle",
+      "x": 2.9,
+      "z": -2.35,
+      "radius": 1.09
+    },
+    {
+      "id": "bridge-rail-0.49",
+      "type": "box",
+      "minX": -0.39,
+      "maxX": 1.59,
+      "minZ": 0.40499999999999997,
+      "maxZ": 0.575
+    },
+    {
+      "id": "bridge-rail-2.31",
+      "type": "box",
+      "minX": -0.39,
+      "maxX": 1.59,
+      "minZ": 2.225,
+      "maxZ": 2.395
+    },
+    {
+      "id": "Blossom tree",
+      "type": "circle",
+      "x": -4.02,
+      "z": -3.92,
+      "radius": 0.26839999999999997
+    },
+    {
+      "id": "Front west pear tree",
+      "type": "circle",
+      "x": -3.72,
+      "z": 3.18,
+      "radius": 0.187
+    },
+    {
+      "id": "Front east pear tree",
+      "type": "circle",
+      "x": 3.8,
+      "z": 3.25,
+      "radius": 0.1848
+    },
+    {
+      "id": "East spruce",
+      "type": "circle",
+      "x": 4.16,
+      "z": 0.01,
+      "radius": 0.37200000000000005
+    },
+    {
+      "id": "West spruce",
+      "type": "circle",
+      "x": -4.1,
+      "z": 0.7,
+      "radius": 0.30800000000000005
+    },
+    {
+      "id": "Rear spruce",
+      "type": "circle",
+      "x": 4.02,
+      "z": -4.07,
+      "radius": 0.32400000000000007
+    },
+    {
+      "id": "rock-00",
+      "type": "circle",
+      "x": -4.35,
+      "z": 1.25,
+      "radius": 0.32
+    },
+    {
+      "id": "rock-01",
+      "type": "circle",
+      "x": -3.2,
+      "z": 4.26,
+      "radius": 0.31
+    },
+    {
+      "id": "rock-02",
+      "type": "circle",
+      "x": 2.57,
+      "z": 4.05,
+      "radius": 0.36
+    },
+    {
+      "id": "rock-03",
+      "type": "circle",
+      "x": 4.31,
+      "z": 1.63,
+      "radius": 0.31
+    },
+    {
+      "id": "rock-04",
+      "type": "circle",
+      "x": -1.02,
+      "z": 4.16,
+      "radius": 0.25
+    },
+    {
+      "id": "rock-05",
+      "type": "circle",
+      "x": -4.6,
+      "z": -2.12,
+      "radius": 0.18
+    },
+    {
+      "id": "rock-06",
+      "type": "circle",
+      "x": 1.85,
+      "z": -4.2,
+      "radius": 0.25
+    }
+  ]
+}
