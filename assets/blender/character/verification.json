@@ -1,0 +1,76 @@
+{
+  "blender": "5.2.1 LTS",
+  "mesh": "OrangeCharacter",
+  "rig": "CharacterRoot",
+  "components": [
+    "Mandarin body",
+    "Sole.L",
+    "Toe.L",
+    "Cuff.L",
+    "Cuff piping.L",
+    "Pull tab.L",
+    "Sole.R",
+    "Toe.R",
+    "Cuff.R",
+    "Cuff piping.R",
+    "Pull tab.R",
+    "Eye white.L",
+    "Pupil.L",
+    "Glint.L",
+    "Brow.L",
+    "Eye white.R",
+    "Pupil.R",
+    "Glint.R",
+    "Brow.R",
+    "Freckle.-1.0",
+    "Freckle.-1.1",
+    "Freckle.-1.2",
+    "Freckle.-1.3",
+    "Freckle.1.0",
+    "Freckle.1.1",
+    "Freckle.1.2",
+    "Freckle.1.3",
+    "Little smile",
+    "Nose",
+    "Stem",
+    "Leaf",
+    "Leaf ridge"
+  ],
+  "vertices": 5634,
+  "triangles": 11056,
+  "materials": 11,
+  "blenderBounds": {
+    "min": [
+      -0.3491401970386505,
+      -0.34599998593330383,
+      0.0
+    ],
+    "max": [
+      0.34914007782936096,
+      0.29226958751678467,
+      1.0286341905593872
+    ]
+  },
+  "animations": {
+    "Idle": {
+      "seconds": 2.0,
+      "samples": 61,
+      "loopMaxErrorMeters": 0.0,
+      "quarterCycleMotionMeters": 0.022523042687658517,
+      "minimumGroundMeters": 0.0
+    },
+    "Walk": {
+      "seconds": 0.8,
+      "samples": 25,
+      "loopMaxErrorMeters": 1.469575985785263e-17,
+      "quarterCycleMotionMeters": 0.0855628470638633,
+      "minimumGroundMeters": 0.0
+    }
+  },
+  "blendReopened": true,
+  "glbBytes": 437204,
+  "glbAnimationNames": [
+    "Idle",
+    "Walk"
+  ]
+}

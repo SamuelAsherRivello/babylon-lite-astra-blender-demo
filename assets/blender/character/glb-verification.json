@@ -1,0 +1,33 @@
+{
+  "runtimeBounds": {
+    "min": [
+      -0.3491401970386505,
+      0.0,
+      -0.29226958751678467
+    ],
+    "max": [
+      0.34914007782936096,
+      1.0286340713500977,
+      0.34599998593330383
+    ]
+  },
+  "frontEyeCentroidZ": 0.27500000560819116,
+  "rootIdentity": true,
+  "animations": {
+    "Idle": {
+      "durationSeconds": 2.0,
+      "sampleCount": 121,
+      "loopErrorMeters": 0.0,
+      "minimumGroundMeters": 0.0,
+      "motionMeters": 0.02252332813653838
+    },
+    "Walk": {
+      "durationSeconds": 0.800000011920929,
+      "sampleCount": 49,
+      "loopErrorMeters": 1.469575985785263e-17,
+      "minimumGroundMeters": 0.0,
+      "motionMeters": 0.0855628470638633
+    }
+  },
+  "selfContained": true
+}
