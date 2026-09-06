@@ -3,7 +3,12 @@
 .env.*
 node_modules/
 dist/
-/openspec
+.local/
+.venv/
+*.blend1
+*.blend2
+coverage/
+test-results/
 
 .playwright-cli/
 output/playwright/

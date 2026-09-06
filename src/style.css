@@ -1,0 +1,10 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #f2e8df; background: #171c2d; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app { max-width: 1100px; margin: auto; padding: 32px; }
+.eyebrow { color: #eeb99b; letter-spacing: .2em; font-size: .72rem; font-weight: 700; }
+h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: 600; letter-spacing: -.04em; margin: 12px 0; }
+#status, footer { color: #aeb8cc; font-size: .85rem; }
+#renderCanvas { display: block; width: 100%; height: min(60dvh, 600px); border-radius: 20px; outline: none; touch-action: none; margin: 24px 0; }
+footer { line-height: 1.6; }
+@media (max-width: 540px) { .app { padding: 20px; } }
