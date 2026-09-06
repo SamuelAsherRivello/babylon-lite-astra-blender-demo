@@ -52,8 +52,22 @@ npx --yes --package @playwright/cli playwright-cli -s=c004 run-code --filename t
 
 The script uses the opened page URL, so another port is supported. It writes four viewport captures and `output/playwright/c004-portrait.png`. Checked-in review images are `docs/images/c004-portrait.png` and `docs/images/c004-desktop.png`. Runtime QA was served on loopback port 5175 because neighboring task servers occupied other development ports.
 
+## Browser-session regression follow-up
+
+The September 6 browser-size report prompted tests in installed Microsoft Edge 152.0.4191.66. Product CSS and camera scale were preserved. Edge passed centered, overflow-free layout at 1280×960, 390×844, 320×568, 844×390, 2560×1396 and 1030×602. The currently connected Chrome tab also had correctly centered natural bounds. The original screenshot's precise cause was not established from these checks.
+
+A separate, confirmed QA defect was reproduced: the browser script left its responsive viewport override active after success or failure. The failing regression recorded original1030×602 becoming1280×960 after an interrupted assertion. The same regression passes after guaranteed cleanup, restoring1030×602. The complete Edge gameplay suite also passes with the restored viewport. The script now restores viewport/device metrics, key state, touch emulation and forced focus in `finally`, and checks horizontal centering as well as containment. Readiness checks focus the dedicated test page before input to avoid inactive-window timing failures.
+
+Use `--browser msedge` with the open command to run the same suite in actual Microsoft Edge; use `--browser chrome` for Chrome. Always use a dedicated session and close it when finished. Repository `AGENTS.md` makes isolation, cleanup and cross-browser verification explicit for future work.
+
+Evidence boundary: the cleanup change was based on HEAD `ed2acdfa0b9ebf55c90627efcbedc95d06cad3e1`. During this follow-up, concurrent uncommitted edits appeared in README, index.html, src/main.ts and src/style.css, with product-file write times 07:43–07:44 UTC. They were not authored, staged or reverted by this fix. The final 07:45 Edge run verifies the browser-served snapshot; it is not proof that those separately edited files match the published baseline. The viewport cleanup regression is independent of the scene changes. The dedicated Edge session was closed after verification.
+
 ## Integration ownership
 
 C004 owns `src/main.ts`, `src/style.css`, `src/controls.ts`, `src/navigation.ts`, `index.html`, `tests/gameplay.test.ts`, `tests/gameplay.browser.cjs`, README updates, `docs/images/c004-*.png`, this handoff and `openspec/changes/c004-gameplay-integration/`.
 
 Worktree: `C:/Users/srive/.codex/worktrees/cc2a/babylon-lite-astra-blender-demo`. Coordinator receives the additive C004 commit SHA after commit. C004 does not push. Preserve the newer C001 configuration/scripts and C002/C003 asset commits during integration; publish only to the explicit new repository destination, never the inherited template origin.
+
+## v0.1.0 release candidate
+
+The reviewed local release includes the Citrus World title, simplified joystick footer and panoramic sky. Browser zoom buttons were removed in that snapshot; the current acceptance suite covers its wheel zoom behavior. Chrome and Microsoft Edge both passed full gameplay checks at localhost5180 with no console errors. QA now creates and closes its own disposable browser context: caller dimensions and API state stay untouched, and all mouse/key/touch state and temporary tabs are discarded on failure. An injected first-viewport-change failure from a native caller kept viewportSize=null, actual1031x604 and browser context count unchanged. This supersedes the earlier direct-CDP cleanup approach and its no-override limitation.

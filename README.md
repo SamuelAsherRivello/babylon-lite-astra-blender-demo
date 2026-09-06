@@ -10,9 +10,9 @@ A small Babylon.js playground for wandering a Blender-authored floating village 
 ## Images
 
 <!-- AI: Use screenshots that exist in this repository and represent the current project. Keep relative paths, matching link href and image src, and the 400-pixel preview width. Replace placeholder alt text with a brief description. Preserve image order unless instructed otherwise; do not invent asset paths. -->
-<a href="docs/images/c004-portrait.png"><img src="docs/images/c004-portrait.png" width="400" alt="Little Citrus floating village with orange character and thumb joystick" /></a>
+<a href="docs/images/gameplay.png"><img src="docs/images/gameplay.png" width="400" alt="Citrus World release with floating village, orange character and thumb joystick" /></a>
 
-<a href="docs/images/c004-desktop.png"><img src="docs/images/c004-desktop.png" width="400" alt="Desktop letterboxed portrait game" /></a>
+
 
 
 ## Demo
@@ -55,9 +55,9 @@ Use Node.js 24.12 or newer and npm. Asset authoring uses Blender; the tested loc
 ## Project Overview
 
 <!-- AI: Summarize the project's purpose, main capabilities, and intended use cases. Describe current implementation; label planned capabilities explicitly rather than presenting them as complete. Keep detailed tooling under Project Details. -->
-Little Citrus presents a pastel cottage, mint-roof tower, stream and bridge inside a 9:16 frame that fits both viewport dimensions. The orange character walks with WASD or the thumb joystick, faces its direction of travel, and switches between Idle and Walk. Radius-aware navigation keeps it on the island and clear of buildings, trees and water.
+Citrus World presents a pastel cottage, mint-roof tower, stream and bridge inside a 9:16 frame that fits both viewport dimensions. The orange character walks with WASD or the thumb joystick, faces its direction of travel, and switches between Idle and Walk. Radius-aware navigation keeps it on the island and clear of buildings, trees and water.
 
-Drag the world with the left mouse button or a finger to orbit its fixed center. Scroll or use the +/− buttons to zoom; ↺ restores the initial view. The camera stays independent of the character. Joystick release, cancellation, focus loss and resizing clear active input.
+Drag the world with the left mouse button or a finger to orbit its fixed center. Scroll to zoom. The camera stays independent of the character. Joystick release, cancellation, focus loss and resizing clear active input.
 
 ### 📝 Documentation
 

@@ -1,15 +1,22 @@
-async (page) => {
+async (sourcePage) => {
+  const sourceViewport = sourcePage.viewportSize();
+  const sourceMetrics = await sourcePage.evaluate(() => [innerWidth, innerHeight]);
+  const context = await sourcePage.context().browser().newContext({ viewport: { width: 1280, height: 960 } });
+  const page = await context.newPage();
   const assert = (value, message) => { if (!value) throw new Error(message); };
-  const url = page.url();
+  const url = sourcePage.url();
   const state = () => page.evaluate(() => window.__littleCitrus.snapshot());
   const settle = () => page.waitForTimeout(140);
-  const fresh = async () => { await page.goto(url); await page.waitForFunction(() => window.__littleCitrus); await settle(); };
+  const fresh = async () => { await page.goto(url); await page.waitForFunction(() => window.__littleCitrus); await page.bringToFront(); await page.waitForTimeout(500); };
   const distance = (a, b) => Math.hypot(a.player.x - b.player.x, a.player.z - b.player.z);
   const centered = s => s.camera.target.every(v => v === 0) && s.safe && s.player.y === 0;
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', msg => { if (msg.type() === 'error') errors.push(msg.text()); });
   const report = {};
+
+  let cdp;
+  try {
   await page.setViewportSize({ width: 1280, height: 960 });
   await fresh();
   const initial = await state();
@@ -32,11 +39,6 @@ async (page) => {
   assert((await state()).camera.radius === 12, 'Wheel zoom lower bound');
   await page.mouse.wheel(0, 10000); await settle();
   assert((await state()).camera.radius === 27, 'Wheel zoom upper bound');
-  await page.getByRole('button', { name: 'Zoom in', exact: true }).click();
-  assert((await state()).camera.radius === 25.5, 'Accessible zoom in');
-  await page.getByRole('button', { name: 'Zoom out', exact: true }).click();
-  await page.getByRole('button', { name: 'Reset view' }).click();
-  assert((await state()).camera.radius === initial.camera.radius, 'Reset view');
   report.camera = { orbited: orbited.camera, lowerBound: 12, upperBound: 27, centered: true };
 
   await fresh();
@@ -54,6 +56,7 @@ async (page) => {
     await page.setViewportSize({ width, height }); await settle();
     const box = await page.locator('.game').boundingBox();
     assert(box.x >= -1 && box.y >= -1 && box.x + box.width <= width + 1 && box.y + box.height <= height + 1, 'Frame fits viewport');
+    assert(Math.abs(box.x + box.width / 2 - width / 2) <= 1, 'Frame is horizontally centered');
     assert(Math.abs(box.width / box.height - 9 / 16) < 0.002, 'Frame stays 9:16');
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight);
     assert(!overflow, 'No page overflow');
@@ -62,7 +65,7 @@ async (page) => {
   }
 
   await page.setViewportSize({ width: 390, height: 844 }); await fresh();
-  const cdp = await page.context().newCDPSession(page);
+  cdp = await page.context().newCDPSession(page);
   await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   const joy = await page.locator('#joystick').boundingBox();
   const jx = joy.x + joy.width / 2, jy = joy.y + joy.height / 2;
@@ -97,12 +100,20 @@ async (page) => {
   const other = await page.context().newPage(); await other.goto('about:blank'); await other.bringToFront(); await page.waitForTimeout(150);
   await page.bringToFront(); await settle();
   const blurred = await state();
-  await page.keyboard.up('KeyW'); await other.close(); await cdp.detach();
+  await page.keyboard.up('KeyW'); await other.close();
   assert(blurred.input.y === 0 && blurred.animation === 'Idle', 'Actual window focus loss clears input');
   report.blur = true;
   await fresh();
   await page.screenshot({ path: 'output/playwright/c004-portrait.png' });
   assert(errors.length === 0, `Browser errors: ${errors.join('; ')}`);
   report.consoleErrors = errors;
+  } finally {
+    // Closing this disposable context releases mouse/keys, CDP emulation and
+    // every temporary tab even when an assertion fails. The caller is untouched.
+    await context.close();
+  }
+  assert(JSON.stringify(sourcePage.viewportSize()) === JSON.stringify(sourceViewport), 'QA must not change caller viewport state');
+  assert(JSON.stringify(await sourcePage.evaluate(() => [innerWidth, innerHeight])) === JSON.stringify(sourceMetrics), 'QA must not change caller viewport pixels');
+  report.viewportRestored = true;
   return report;
 }

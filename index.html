@@ -8,12 +8,11 @@
     <title>Babylon Lite Astra Blender Demo</title>
   </head>
   <body>
-    <main class="game" aria-label="Little Citrus floating village">
+    <main class="game" aria-label="Citrus World floating village">
       <canvas id="renderCanvas" tabindex="0" aria-label="Floating village. WASD to walk, drag to orbit, scroll to zoom."></canvas>
-      <header class="heading"><p class="eyebrow"><span></span> A LITTLE WORLD TO WANDER</p><h1>Little Citrus<span>Floating village</span></h1></header>
-      <div class="view-controls" aria-label="Camera controls"><button id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button><button id="reset-view" aria-label="Reset view" title="Reset view">↺</button></div>
+      <header class="heading"><h1>Citrus World</h1><p class="heading-subtitle">Babylon Lite Astra Blender Demo</p></header>
       <div id="loading" class="loading"><span class="loading-dot"></span><p id="status" role="status">Growing your little world…</p><button id="retry" hidden>Try again</button></div>
-      <footer class="controls"><div class="control-caption"><span class="tiny-sun">✳</span><strong>Take the slow way.</strong><p>Drag the world to look around.</p></div><div id="joystick" class="joystick" role="group" aria-label="Movement joystick. Drag to walk or use WASD."><i class="direction up">⌃</i><i class="direction right">›</i><i class="direction down">⌄</i><i class="direction left">‹</i><div id="joystick-knob" class="joystick-knob"><span></span></div></div><p class="movement-hint">DRAG TO WANDER <span>· WASD</span></p><div class="footer-line"><span>MADE FOR A MOMENT OF CALM</span><span class="sound-mark">✦</span></div></footer>
+      <footer class="controls"><div id="joystick" class="joystick" role="group" aria-label="Movement joystick. Drag to walk or use WASD."><i class="direction up">⌃</i><i class="direction right">›</i><i class="direction down">⌄</i><i class="direction left">‹</i><div id="joystick-knob" class="joystick-knob"><span></span></div></div><p class="movement-hint">Joystick or WASD to move<br>Mouse drag for camera</p></footer>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

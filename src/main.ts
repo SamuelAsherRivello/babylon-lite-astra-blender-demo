@@ -14,6 +14,7 @@ import '@babylonjs/loaders/glTF';
 import { selectEngine } from './engine-selection';
 import { bindControls, cameraRelative, constrainCamera } from './controls';
 import { isWalkable, moveOnGround, validateNavigation } from './navigation';
+import { addSky } from './sky';
 import './style.css';
 
 const canvas = document.querySelector<HTMLCanvasElement>('#renderCanvas')!;
@@ -38,6 +39,7 @@ async function start() {
   camera.minZ = 0.1; camera.maxZ = 100; camera.fov = 0.72;
   // All gestures are owned by bindControls; default inputs would permit panning.
   camera.inputs.clear();
+  addSky(scene);
   const applyCamera = () => {
     const state = constrainCamera(camera.alpha, camera.beta, camera.radius);
     camera.alpha = state.alpha; camera.beta = state.beta; camera.radius = state.radius;
@@ -46,10 +48,6 @@ async function start() {
   const zoom = (delta: number) => { camera.radius += delta; applyCamera(); };
   const inputs = bindControls(canvas, document.querySelector('#joystick')!, document.querySelector('#joystick-knob')!,
     (dx, dy) => { camera.alpha += dx * 0.007; camera.beta -= dy * 0.006; applyCamera(); }, zoom);
-  const domEvents = new AbortController();
-  document.querySelector('#zoom-in')!.addEventListener('click', () => zoom(-1.5), { signal: domEvents.signal });
-  document.querySelector('#zoom-out')!.addEventListener('click', () => zoom(1.5), { signal: domEvents.signal });
-  document.querySelector('#reset-view')!.addEventListener('click', () => { Object.assign(camera, initialView); applyCamera(); }, { signal: domEvents.signal });
   const hemi = new HemisphericLight('sky', new Vector3(0, 1, 0), scene);
   hemi.intensity = 0.85; hemi.groundColor = Color3.FromHexString('#a7ba9b');
   const sun = new DirectionalLight('sun', new Vector3(-0.6, -1, 0.4), scene);
@@ -59,7 +57,7 @@ async function start() {
   shadow.usePercentageCloserFiltering = true; shadow.bias = 0.001; shadow.normalBias = 0.03; shadow.darkness = 0.2;
   const resize = new ResizeObserver(() => { inputs.clear(); engine.resize(); });
   resize.observe(canvas);
-  dispose = () => { resize.disconnect(); inputs.dispose(); domEvents.abort(); scene.dispose(); engine.dispose(); delete (window as Window & { __littleCitrus?: unknown }).__littleCitrus; };
+  dispose = () => { resize.disconnect(); inputs.dispose(); scene.dispose(); engine.dispose(); delete (window as Window & { __littleCitrus?: unknown }).__littleCitrus; };
 
   const navResponse = await fetch(`${base}assets/world/world.navigation.json`);
   if (!navResponse.ok) throw new Error(`Village navigation failed to load (${navResponse.status}).`);
