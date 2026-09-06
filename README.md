@@ -19,7 +19,6 @@ A small Babylon.js playground for wandering a Blender-authored floating village 
 
 <!-- AI: Replace both {demo_url} occurrences with the verified public demo URL. Check deployment configuration or a confirmed deployed site; do not assume a hosting URL. Keep the placeholder if no demo is available. -->
 - [Play Citrus World](https://samuelasherrivello.github.io/babylon-lite-astra-blender-demo/)
-- [Download v0.1.0](https://github.com/SamuelAsherRivello/babylon-lite-astra-blender-demo/releases/tag/v0.1.0)
 
 ## Table of Contents
 
