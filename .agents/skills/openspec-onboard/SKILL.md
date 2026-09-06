@@ -10,6 +10,11 @@ metadata:
   generatedBy: "1.12.0"
 ---
 
+## Repository command adapter
+
+Run CLI examples from the repository root through `node CITRUS_WORLD/scripts/openspec.mjs <arguments>`. For example, `openspec list --json` below means `node CITRUS_WORLD/scripts/openspec.mjs list --json`. Keep all arguments and store flags. Canonical files live in `.openspec/`; the launcher validates an ignored persistent `openspec` alias to those same files. Use `.openspec/` paths for edits, staging and published links. Inherited `.openspec/history/template/` content is historical, outside active planning.
+
+
 Guide the user through their first complete OpenSpec workflow cycle. This is a teaching experience—you'll do real work in their codebase while explaining each step.
 
 **Store selection:** If the user names a store (a store is a standalone OpenSpec repo registered on this machine) or the work lives in one, run `openspec store list --json` to discover registered store ids, then pass `--store <id>` on the commands that read or write specs and changes (`new change`, `status`, `instructions`, `list`, `show`, `validate`, `archive`, `doctor`, `context`, `schemas`, `view`). Once selected, treat `--store <id>` as sticky for the rest of the workflow. Every unscoped example of those commands below is shorthand: before running it, append the flag. For example, run `openspec status --change "<name>" --json --store "<id>"`, not the unscoped form shown below. Other commands do not take the flag. Hints printed by commands already carry the flag; keep it on follow-ups. Without a store, commands act on the nearest local `openspec/` root.

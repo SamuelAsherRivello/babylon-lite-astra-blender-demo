@@ -12,3 +12,7 @@ test-results/
 
 .playwright-cli/
 output/playwright/
+
+# Local compatibility shortcut; canonical planning is tracked in .openspec/.
+/openspec
+/CITRUS_WORLD/output/

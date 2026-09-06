@@ -11,8 +11,10 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run test && npm run build",
-    "spec:validate": "openspec validate --all --strict",
+    "check": "npm run test && npm run test:tooling && npm run build",
+    "test:tooling": "node --test tests/openspec-tooling.mjs",
+    "spec": "node scripts/openspec.mjs",
+    "spec:validate": "node scripts/openspec.mjs validate --all --strict",
     "blender": "node scripts/blender.mjs"
   },
   "dependencies": {

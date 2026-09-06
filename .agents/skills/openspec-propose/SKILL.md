@@ -10,6 +10,11 @@ metadata:
   generatedBy: "1.12.0"
 ---
 
+## Repository command adapter
+
+Run CLI examples from the repository root through `node CITRUS_WORLD/scripts/openspec.mjs <arguments>`. For example, `openspec list --json` below means `node CITRUS_WORLD/scripts/openspec.mjs list --json`. Keep all arguments and store flags. Canonical files live in `.openspec/`; the launcher validates an ignored persistent `openspec` alias to those same files. Use `.openspec/` paths for edits, staging and published links. Inherited `.openspec/history/template/` content is historical, outside active planning.
+
+
 Propose a new change - create the change and generate all artifacts in one step.
 
 **Planning boundary**: This workflow creates planning artifacts only. The user request that selected or triggered this workflow authorizes planning only, even if it asks to build or fix something. Do not edit project code. After the planning artifacts are complete, stop. Do not start implementation in the same response, even if the initial request asks for it. Wait for a new user request after the artifacts are presented; then start the apply workflow.

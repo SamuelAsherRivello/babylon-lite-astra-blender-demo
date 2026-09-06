@@ -1,0 +1,1307 @@
+[
+  {
+    "source": "PROJECT_NAME/documentation/samuel-asher-rivello-banner.png",
+    "destination": "CITRUS_WORLD/documentation/samuel-asher-rivello-banner.png",
+    "sha256": "3218064515d57e8103938f3b724194ce0f277d75c1ca74bb1ecdad95960d04cb"
+  },
+  {
+    "source": "PROJECT_NAME/documentation/screenshot01.png",
+    "destination": "CITRUS_WORLD/documentation/screenshot01.png",
+    "sha256": "548f0571c3b51137edef87b878cbb30377d74e7e79929f72331d49386192cd86"
+  },
+  {
+    "source": "docs/asset-contract.md",
+    "destination": "CITRUS_WORLD/documentation/asset-contract.md",
+    "sha256": "0366b0a8bd28194286105b776698998231bf4f93889fbc9504a30c4f981babf6"
+  },
+  {
+    "source": "docs/blender-toolchain.md",
+    "destination": "CITRUS_WORLD/documentation/blender-toolchain.md",
+    "sha256": "1f28dfc7f66dcef1433fcd8d68fc6079841d55962da4b8ff8fbe6c929e4ab6c7"
+  },
+  {
+    "source": "docs/template-provenance.md",
+    "destination": "CITRUS_WORLD/documentation/template-provenance.md",
+    "sha256": "9c76b563fbb503a692ac91d9096870e5eff318ea142cfb5b54a6831aa13d1b8c"
+  },
+  {
+    "source": "docs/coordination/C001-setup.md",
+    "destination": "CITRUS_WORLD/documentation/coordination/C001-setup.md",
+    "sha256": "03618190acba31c0a090d83131c6c1c4bfeded7b98887fcc1643336aa3b98d2a"
+  },
+  {
+    "source": "docs/coordination/C002-world.md",
+    "destination": "CITRUS_WORLD/documentation/coordination/C002-world.md",
+    "sha256": "cb905241fa19cf30f0d6459232264be37f76dd4d425d4d4746c3f754ebd9b63b"
+  },
+  {
+    "source": "docs/coordination/C003-character.md",
+    "destination": "CITRUS_WORLD/documentation/coordination/C003-character.md",
+    "sha256": "4a945861d4b92f33644421e603ee37fdb3fa3c44f46c9f54238afcf7180fe002"
+  },
+  {
+    "source": "docs/coordination/C004-gameplay.md",
+    "destination": "CITRUS_WORLD/documentation/coordination/C004-gameplay.md",
+    "sha256": "3f40f2c2facc8fe708d39f0c5df8f1eea55bb42b28462387376d23beb62dd2c1"
+  },
+  {
+    "source": "docs/coordination/C005-vfx.md",
+    "destination": "CITRUS_WORLD/documentation/coordination/C005-vfx.md",
+    "sha256": "56d38562fa32c3770ab1a532403b72d29b8d218ee4d3a42b9a19c9e06bf87351"
+  },
+  {
+    "source": "docs/coordination/request.md",
+    "destination": "CITRUS_WORLD/documentation/coordination/request.md",
+    "sha256": "13730669563b651870b3709d70c169d842f7ba13780660c12f379c9e97562aea"
+  },
+  {
+    "source": "docs/images/c004-desktop.png",
+    "destination": "CITRUS_WORLD/documentation/images/c004-desktop.png",
+    "sha256": "085645b37f1aae56ca3a70eb8dd6f9574b1b01f486b31b8fbd757496e88e0cf0"
+  },
+  {
+    "source": "docs/images/c004-portrait.png",
+    "destination": "CITRUS_WORLD/documentation/images/c004-portrait.png",
+    "sha256": "10aeb26e36ed7a78c01b5fa0ceeb7d4de897b40c2f76cd90bdb771d37350c81b"
+  },
+  {
+    "source": "docs/images/gameplay.png",
+    "destination": "CITRUS_WORLD/documentation/images/gameplay.png",
+    "sha256": "0116cc44b05ec12c141c5ae7c84a75e5d1636c46bc0a107a46d044872da8c616"
+  },
+  {
+    "source": "docs/releases/v0.1.0.md",
+    "destination": "CITRUS_WORLD/documentation/releases/v0.1.0.md",
+    "sha256": "1ed19fb102841ac6e96343f535cadb1d8773dff5a8198d727123168e2374a754"
+  },
+  {
+    "source": "src/controls.ts",
+    "destination": "CITRUS_WORLD/src/controls.ts",
+    "sha256": "54ced760775a98137f5b636951aca49730af77c44a2234936d5a01a722149831"
+  },
+  {
+    "source": "src/engine-selection.ts",
+    "destination": "CITRUS_WORLD/src/engine-selection.ts",
+    "sha256": "9a7c073dbe9eab33bcb74ac787eef7d19692f937b8add1147604484405058f75"
+  },
+  {
+    "source": "src/main.ts",
+    "destination": "CITRUS_WORLD/src/main.ts",
+    "sha256": "95f38c4b15e7cbb1c070a51454c2edb304b438774088f226a846e3667e684783"
+  },
+  {
+    "source": "src/navigation.ts",
+    "destination": "CITRUS_WORLD/src/navigation.ts",
+    "sha256": "504ab420e41ef98e82cafebe36338c287a36292a364f5cc82f8919efc541f2dd"
+  },
+  {
+    "source": "src/sky.ts",
+    "destination": "CITRUS_WORLD/src/sky.ts",
+    "sha256": "af9679902c02464540f84d71bc10874641d805b1cd8bd94d93f6c145dd0083fd"
+  },
+  {
+    "source": "src/style.css",
+    "destination": "CITRUS_WORLD/src/style.css",
+    "sha256": "5febc50d4279773c7b03a986b5ce55681f48be466955c217d1f6b6ac4afebe42"
+  },
+  {
+    "source": "src/vfx-motion.ts",
+    "destination": "CITRUS_WORLD/src/vfx-motion.ts",
+    "sha256": "fad044d0bbbde4fd1eec8a64f393b4dc76ca5aa2d5e812b5bec6c2f64e4d987f"
+  },
+  {
+    "source": "src/vfx.ts",
+    "destination": "CITRUS_WORLD/src/vfx.ts",
+    "sha256": "641cd0cc42799a9ab3b4892c27f8985ecbcbbb80d8d93b77ab4d2aaa9064897b"
+  },
+  {
+    "source": "tests/engine-selection.test.ts",
+    "destination": "CITRUS_WORLD/tests/engine-selection.test.ts",
+    "sha256": "b1ff863e8c0d978b3e6238f51d9b65bf9afe0a17fc2cfd21115ab36ae5edb957"
+  },
+  {
+    "source": "tests/gameplay.browser.cjs",
+    "destination": "CITRUS_WORLD/tests/gameplay.browser.cjs",
+    "sha256": "1cd64153f49a9d9a5a9cbb124540ece7fb26cd0f35132959220dea01089cbd23"
+  },
+  {
+    "source": "tests/gameplay.test.ts",
+    "destination": "CITRUS_WORLD/tests/gameplay.test.ts",
+    "sha256": "d1617774bc46afebba02bc6d928724355871236bd6781ee0c36147e2c6a8f9e1"
+  },
+  {
+    "source": "tests/run-browser.cjs",
+    "destination": "CITRUS_WORLD/tests/run-browser.cjs",
+    "sha256": "12f653edbcbdea4c6ec5076651b07c1a5a18f6879a413f0dcacbf2b6c512951f"
+  },
+  {
+    "source": "tests/vfx-lifecycle.test.ts",
+    "destination": "CITRUS_WORLD/tests/vfx-lifecycle.test.ts",
+    "sha256": "ab40ee9ef5755b4374d0a11403a9062cfb3e6a69b37109e9720429240c2b37dc"
+  },
+  {
+    "source": "tests/vfx-performance.browser.cjs",
+    "destination": "CITRUS_WORLD/tests/vfx-performance.browser.cjs",
+    "sha256": "daf830930d4d08d9864b160cd0da3bd1144c796ce8071d25656321a7e00ad3cb"
+  },
+  {
+    "source": "tests/vfx.browser.cjs",
+    "destination": "CITRUS_WORLD/tests/vfx.browser.cjs",
+    "sha256": "7c4ff47def2b62a114a5046172747605fd180f47edb97b25eb2dafd39c8aa91e"
+  },
+  {
+    "source": "tests/vfx.test.ts",
+    "destination": "CITRUS_WORLD/tests/vfx.test.ts",
+    "sha256": "5888a45fbf6518dbc28febe8d2e84b39cf9f434aedbebe03f17804be14a6c216"
+  },
+  {
+    "source": "scripts/blender-mcp-bootstrap.py",
+    "destination": "CITRUS_WORLD/scripts/blender-mcp-bootstrap.py",
+    "sha256": "6ae23e9bf5657f115100836a68156165d01880c4b7c3bf458589adb7156f4d09"
+  },
+  {
+    "source": "scripts/blender-mcp-server.mjs",
+    "destination": "CITRUS_WORLD/scripts/blender-mcp-server.mjs",
+    "sha256": "ffa19d69ab53a25ce84bc7f4d56809a4841ed47057150328a47f14d9ff1cc01f"
+  },
+  {
+    "source": "scripts/blender.mjs",
+    "destination": "CITRUS_WORLD/scripts/blender.mjs",
+    "sha256": "880b4024351daa6a82479b66cc0b0f99b8835af007b99aff93faa2b71f229864"
+  },
+  {
+    "source": "scripts/setup-blender-mcp.py",
+    "destination": "CITRUS_WORLD/scripts/setup-blender-mcp.py",
+    "sha256": "858979b6eca4a4c4b89bd69eea52fc7774815e8888370069515c317f9a428d15"
+  },
+  {
+    "source": "scripts/verify-blender-mcp.py",
+    "destination": "CITRUS_WORLD/scripts/verify-blender-mcp.py",
+    "sha256": "8f66c39681b2c000eb6f48f0338327d0b8c60bcb1b27877dac60bb977360ff62"
+  },
+  {
+    "source": "public/assets/character/character.glb",
+    "destination": "CITRUS_WORLD/public/assets/character/character.glb",
+    "sha256": "26264cca4c048487885048ea7bbfe2a43d9c3de523795b03ba456f8a8fd76eba"
+  },
+  {
+    "source": "public/assets/world/world.glb",
+    "destination": "CITRUS_WORLD/public/assets/world/world.glb",
+    "sha256": "703c56ce8e90ebacdfa896aa775568a4c7cc5ee61b27e7c59d4788758b647fe8"
+  },
+  {
+    "source": "public/assets/world/world.navigation.json",
+    "destination": "CITRUS_WORLD/public/assets/world/world.navigation.json",
+    "sha256": "d07409dc542ade666d4036c268a6e1cdd684b24a2dbbe31c1d3a2e33e4eaf0b2"
+  },
+  {
+    "source": "assets/blender/character/character.blend",
+    "destination": "CITRUS_WORLD/assets/blender/character/character.blend",
+    "sha256": "fa1e0eddf5eb6e2050d9f7eac3dfa9aa6ee8335c3241305e52d62fb160627ea3"
+  },
+  {
+    "source": "assets/blender/character/create_character.py",
+    "destination": "CITRUS_WORLD/assets/blender/character/create_character.py",
+    "sha256": "8dbb41d6f5051baf2308a49c50ade5b11ef4d1cd50941cc7ef886702befe2d2b"
+  },
+  {
+    "source": "assets/blender/character/glb-verification.json",
+    "destination": "CITRUS_WORLD/assets/blender/character/glb-verification.json",
+    "sha256": "a4b5c5949e6f62b933950b5b54e432ecd50054cc318b1f82e63fcda5ad14e163"
+  },
+  {
+    "source": "assets/blender/character/preview-glb.png",
+    "destination": "CITRUS_WORLD/assets/blender/character/preview-glb.png",
+    "sha256": "e2eb763c4adaad68ddebeecd4985c5fabc61f666683dacfc3666e481595af1a5"
+  },
+  {
+    "source": "assets/blender/character/preview.png",
+    "destination": "CITRUS_WORLD/assets/blender/character/preview.png",
+    "sha256": "6dbdd9142756e4988e7a81d3d292d8a845c538cd189f1a5e4a8aa0c93514f1bc"
+  },
+  {
+    "source": "assets/blender/character/verification.json",
+    "destination": "CITRUS_WORLD/assets/blender/character/verification.json",
+    "sha256": "1c5d0b8915d1a720abe80ead6352ff6e0af3e94cad8652a88816141a1926f6d6"
+  },
+  {
+    "source": "assets/blender/character/verify_character.py",
+    "destination": "CITRUS_WORLD/assets/blender/character/verify_character.py",
+    "sha256": "4800f1dff81c637084c32065d84c3cdb5cedbb1a45c3c99afc235935d23795ba"
+  },
+  {
+    "source": "assets/blender/world/create_world.py",
+    "destination": "CITRUS_WORLD/assets/blender/world/create_world.py",
+    "sha256": "5d06cc7411b4577450e68bdc046b5ee1a218a390222087f8aeb0fe4f368aaf33"
+  },
+  {
+    "source": "assets/blender/world/verify_world.py",
+    "destination": "CITRUS_WORLD/assets/blender/world/verify_world.py",
+    "sha256": "e17159941c74eef4d07982e0d1bd67da9269481b32539740df2014bf534925c9"
+  },
+  {
+    "source": "assets/blender/world/world.blend",
+    "destination": "CITRUS_WORLD/assets/blender/world/world.blend",
+    "sha256": "b53685fee6d0e313f876aa853344a83970a417bacb3d00b9ee7fea2dd39ac893"
+  },
+  {
+    "source": "assets/blender/world/world.preview.png",
+    "destination": "CITRUS_WORLD/assets/blender/world/world.preview.png",
+    "sha256": "102650300f61ac7aa3875f1d728a48b3e992fa668d309a5e023f10b06d962cf9"
+  },
+  {
+    "source": "assets/blender/world/world.validation.json",
+    "destination": "CITRUS_WORLD/assets/blender/world/world.validation.json",
+    "sha256": "85f9682ba738a315b2dda7aa0ca6adb75ad933e7d61e7f1976c227778701a6b0"
+  },
+  {
+    "source": "package.json",
+    "destination": "CITRUS_WORLD/package.json",
+    "sha256": "dc1b231f80bc3d41e007b7014800935dcfd17e11a491f6f41886958c1adbcc00"
+  },
+  {
+    "source": "package-lock.json",
+    "destination": "CITRUS_WORLD/package-lock.json",
+    "sha256": "042c3bbe10c9ee31e1d20c913c0d541f3391bcbcf562cc7f4b62e69400ecf877"
+  },
+  {
+    "source": "index.html",
+    "destination": "CITRUS_WORLD/index.html",
+    "sha256": "14904da3f0ffc058ec4d1170caadd59fb58ba959942041bd717741cdb67f8597"
+  },
+  {
+    "source": "tsconfig.json",
+    "destination": "CITRUS_WORLD/tsconfig.json",
+    "sha256": "51e79eba3b4897f62f0c64d1810e0d1fe858e33d8b322b4012f15f6102a956ed"
+  },
+  {
+    "source": "vite.config.ts",
+    "destination": "CITRUS_WORLD/vite.config.ts",
+    "sha256": "31c8f2889580ae1dccfd12952f83ddb7b6c724d60392449b61cad819cf303ea5"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/.openspec.yaml",
+    "sha256": "9a277390eee8e8a9c8df6ac33bdd8558ea577eaac9ae591300491c7b6bad89c9"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/A5_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/A5_VERIFICATION.md",
+    "sha256": "f4d0d2fbb16c1ac84f19b2006fea117f0b34dc7c9ce12604f83c566a11488da1"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/design.md",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/design.md",
+    "sha256": "7b7080603e9dd46d9c82f41a240c70066994013ecf06ced6bc0105c20aabf8a1"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/proposal.md",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/proposal.md",
+    "sha256": "e34fb9e878fab734af4da1ec60f2cc5278e82e321a9b60f51e10c9121381917f"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/tasks.md",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/tasks.md",
+    "sha256": "b6beea2367017512ef85874ce7cc8afc7453792998c88bd764c745ec7c04a013"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/specs/account-activity/spec.md",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/specs/account-activity/spec.md",
+    "sha256": "45095bcfc1cd417d487d24fe37e98e1632dd3082b9ae02bdf52d73a12cfdc243"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/specs/account-entry/spec.md",
+    "sha256": "cbee2c6b4b56274706ad7a51d3e9a08722cabee0c0d98d1714ee135b4398e3c9"
+  },
+  {
+    "source": ".openspec/changes/add-a5-inspect-activity/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/add-a5-inspect-activity/specs/story-driven-demo/spec.md",
+    "sha256": "c5336002a81eb5db01f305d3fc8e0839798376f318804611d832e7a326125ed4"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/BOARDING_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/BOARDING_VERIFICATION.md",
+    "sha256": "e2d0d0517943b1ea5d98c2bcc8f5785d95febd39321e2ee8815945d9e991ceeb"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/design.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/design.md",
+    "sha256": "f532acc5f897c615cbbd3867be30fce7fc7fe9d57bb08731a1bc9ca580e0a0f1"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/proposal.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/proposal.md",
+    "sha256": "6f7dada2e62a5b4e37ea5915ac1987036bb6d8640164f442a89ec2dd7bbc3c46"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/tasks.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/tasks.md",
+    "sha256": "66365d5c0afd840c61c17768a8b0b0820f0e19b1ff09300e7705b7892ccc125e"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/UI_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/UI_VERIFICATION.md",
+    "sha256": "38fbc377689ad468afa53b4263e581140842fd3293c7b3f151d372826d67d7eb"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/specs/account-balance/spec.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/specs/account-balance/spec.md",
+    "sha256": "7d5d95243953f330c9c2280690c110865c76784ddef38d3653c96c2ea4c347ff"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/specs/account-boarding-settlement/spec.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/specs/account-boarding-settlement/spec.md",
+    "sha256": "8ac23b16300ad716db0b0d58fdb547fa31bf51caa5d941a86f32a3911e68ceff"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/specs/account-logout/spec.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/specs/account-logout/spec.md",
+    "sha256": "c7db2c886981b0c0bfb7183b506a926067c37368621ab6205cb0cb2f597cf277"
+  },
+  {
+    "source": ".openspec/changes/add-bitcoin-boarding-settlement/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/add-bitcoin-boarding-settlement/specs/story-driven-demo/spec.md",
+    "sha256": "110278a917bbbbfa48de9b569488101db2a0911368dd1c3c5f6a518f6255a4bd"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/design.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/design.md",
+    "sha256": "9be151e1e0bd304d03bfcc18c00c3bfb0cc6dc6d0194546dbda2c9b1e042119f"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/IMPLEMENTATION_FINDINGS.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/IMPLEMENTATION_FINDINGS.md",
+    "sha256": "27588eb7f9ea1b41c90404b9e7e3875bce901c270e5d7ec51d01ab278d880dbf"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/proposal.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/proposal.md",
+    "sha256": "964751850d5a88f6f897a3c3eb73a9f400586eacdff413d73ec920f5f18d3a72"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/tasks.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/tasks.md",
+    "sha256": "05011b6cf3cefb524911bcfbbf48eab632ceea17060f6466c3c14ed551c7edcc"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/VERIFICATION.md",
+    "sha256": "67c2a117bd78ba27a22a90e3be72d6b77afe4d82c1201979d5c9adae3833a95f"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/specs/account-address-sending/spec.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/specs/account-address-sending/spec.md",
+    "sha256": "3f7046f2b17c1af31a8cb44526b0a5c6f5f674dde075f40b2a21cd4c0d5029a6"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/specs/account-logout/spec.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/specs/account-logout/spec.md",
+    "sha256": "af4bfe8a85bf17a3f61e4619d20cc3a90708e526c72f6bfca1aa93a5fac76db3"
+  },
+  {
+    "source": ".openspec/changes/add-d3a-address-sending/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/add-d3a-address-sending/specs/story-driven-demo/spec.md",
+    "sha256": "1c1e81abcb4ad208fc5d7c8e665cf02981dfd49355230d978b0d3a0ff80b0514"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/design.md",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/design.md",
+    "sha256": "d082d1f7232169874eff2add2f43ff0138af8eb6c5988e9e0f8caf1766ad3db8"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/proposal.md",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/proposal.md",
+    "sha256": "9643215a24a80f94a417496d596d7796fda1fc030454a69f89634ff80f9b3526"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/tasks.md",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/tasks.md",
+    "sha256": "d295d5b6827b03a234a54537e95cfbbb148c02fddb5cb5a1e17cf72b10093aeb"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/verification.md",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/verification.md",
+    "sha256": "f087469e846b244262a2d08b0adce910e850803aa8be1204b3072168c6e97bc3"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/specs/account-invoice-receiving/spec.md",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/specs/account-invoice-receiving/spec.md",
+    "sha256": "ec0363ef62e65e5dc40612a050c4fe7b62459de7486ff1ba1508f873c0895a91"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/specs/account-logout/spec.md",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/specs/account-logout/spec.md",
+    "sha256": "af4bfe8a85bf17a3f61e4619d20cc3a90708e526c72f6bfca1aa93a5fac76db3"
+  },
+  {
+    "source": ".openspec/changes/add-lightning-invoice-receiving/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/add-lightning-invoice-receiving/specs/story-driven-demo/spec.md",
+    "sha256": "e6ce0035982076ac60bdd85bf1c0a5758fda182414f4f4900849021be2e89f96"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a2-account-creation/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a2-account-creation/.openspec.yaml",
+    "sha256": "9a277390eee8e8a9c8df6ac33bdd8558ea577eaac9ae591300491c7b6bad89c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a2-account-creation/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a2-account-creation/design.md",
+    "sha256": "0ae696f9d9c19138702b76d03b56e00814d11a5e6ec5c6f36c3f33a3e9e6c131"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a2-account-creation/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a2-account-creation/proposal.md",
+    "sha256": "f398b8d591ac385599e42bb93e2e264f05a0cc761d0b7dfec22585f1ca26cf98"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a2-account-creation/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a2-account-creation/tasks.md",
+    "sha256": "0ab98b77670885017086f67872e74c067d56b694c610bc7db0b99bc59c2bf2d8"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a2-account-creation/specs/account-creation/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a2-account-creation/specs/account-creation/spec.md",
+    "sha256": "2313d45d45f17cc5385f00bd94b12f449859a4932a7b97e685a3c38fc673f5d2"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a2-account-creation/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a2-account-creation/specs/account-entry/spec.md",
+    "sha256": "1910c481b1f3ab6ff9becb4d592e0f2a6dce63ffd303e5b8040c0815d990aa4e"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a2-account-creation/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a2-account-creation/specs/story-driven-demo/spec.md",
+    "sha256": "fde882b76152d16abeaf503785b5d7aae71e7e07b0cc2cb2fac673c7dfb35e0c"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/.openspec.yaml",
+    "sha256": "9a277390eee8e8a9c8df6ac33bdd8558ea577eaac9ae591300491c7b6bad89c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/A3_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/A3_VERIFICATION.md",
+    "sha256": "ed8d3493b61d20d9753d2c0371948d404174296048ae152926a93bd5fa86d4c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/design.md",
+    "sha256": "fa300ffc5ac22150184aebec5f537ae49721bc75f11ab05c783e20fb2dda7214"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/proposal.md",
+    "sha256": "35d18908b7311afad2d8b812d16439ca9aead52ddf5d3e88759b71e997f50493"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/tasks.md",
+    "sha256": "adf9a410e4a09f93e211e975a11946474fcee5c49e954c77fe6a04a12671e23f"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-creation/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-creation/spec.md",
+    "sha256": "9b2fee0124061ff613e980cbad0b83d2944da79d46974fac9638997e8175f663"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-entry/spec.md",
+    "sha256": "5cc3a94f25f222ed21f8111a4aa436bf55ed63f00dacb95abf296837d2a425ce"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-logout/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-logout/spec.md",
+    "sha256": "82e36fba516a52a566602b328e2899b6db29a0f6662d86bf17a63bd65b946633"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-restoration/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/specs/account-restoration/spec.md",
+    "sha256": "f096951f13622b945b652c525eacf2f88b30455f3608596ba57e6990f1c67070"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a3-account-restoration/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a3-account-restoration/specs/story-driven-demo/spec.md",
+    "sha256": "c12197ac51e1d9cf7b9fd8351ec12421e48314e7b6ba17206803bae877ae4e86"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/.openspec.yaml",
+    "sha256": "9a277390eee8e8a9c8df6ac33bdd8558ea577eaac9ae591300491c7b6bad89c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/A4_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/A4_VERIFICATION.md",
+    "sha256": "62b90fd597c815f46384fa2f7fa20bdfe555a961c6fd6147c86dbe729f1a2ec5"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/design.md",
+    "sha256": "9caf2316c87cd7117e3a56b6d96a2ad15be8dedcab47ca6bb34b4576d2b5102f"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/proposal.md",
+    "sha256": "75cdc0bef3c42171eebd1677f33de49b26863c06c9b5ecf0d5f32106b51a2f2d"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/tasks.md",
+    "sha256": "1717acdb593c015637019ef29c4cee7379948fc15a161325b3b8ec090840376b"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/specs/account-balance/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/specs/account-balance/spec.md",
+    "sha256": "6cf039c940ff082096d30955457fe33cdd52db471cf0800bbd73a7ff4a0b7390"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/specs/account-entry/spec.md",
+    "sha256": "156b0df91a94abba9aee7badf22bdff4ef77c99eae784609077700d19c0191de"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a4-account-balance/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a4-account-balance/specs/story-driven-demo/spec.md",
+    "sha256": "b90093771ac1520337645286aad4151621eb52bc3e5bb0cb096a4ca68c95b687"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/.openspec.yaml",
+    "sha256": "9a277390eee8e8a9c8df6ac33bdd8558ea577eaac9ae591300491c7b6bad89c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/A6_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/A6_VERIFICATION.md",
+    "sha256": "e2d3675be0ea80cac78de185c00601a5e95d67a99a7309eb56ec279d5789ebf4"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/archive-note.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/archive-note.md",
+    "sha256": "b9e4789d6d925ee0528e040f2dd5ceb0db5ebb8b86062a1f266bf1117bedec14"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/design.md",
+    "sha256": "3c4b36c96be4c8fd417b305afa918e493846839107b6f82d1187b1a707faecdd"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/proposal.md",
+    "sha256": "4e7eaf6a7f8133a26eadc218c68ce246d4cbe2a2d44d516ba8a217c2bfc2da7a"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/tasks.md",
+    "sha256": "c9c16dd955a4b2534b1497fbb7c223655b5eb9384ce22c10a485ba2f20408845"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/specs/account-entry/spec.md",
+    "sha256": "b0578876db07ffca6e67ebd1f745363e10fe00e49742e0d70da0f136d92e639f"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/specs/account-logout/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/specs/account-logout/spec.md",
+    "sha256": "716ba33ab61826aced02043164fa2dc79dae87ba0842c328474a38754f171784"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-a6-account-logout/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-a6-account-logout/specs/story-driven-demo/spec.md",
+    "sha256": "66f3eeefb17a28aa3e021b27daef92297afcd29304f845a44d4d6ee27c7f7b59"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-first-user-story/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-first-user-story/.openspec.yaml",
+    "sha256": "9a277390eee8e8a9c8df6ac33bdd8558ea577eaac9ae591300491c7b6bad89c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-first-user-story/AI_PACKAGE_BOUNDARIES.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-first-user-story/AI_PACKAGE_BOUNDARIES.md",
+    "sha256": "1767f51e4bd0d6cd168876d60bdd0dcff213746b7d19aed58d1ec75a2279c634"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-first-user-story/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-first-user-story/design.md",
+    "sha256": "58bd6f4f449a31516d53a836e34120d41ae1b4f6f00dd16f7466e73c8849ebe5"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-first-user-story/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-first-user-story/proposal.md",
+    "sha256": "c792f76f1bb0baefb823ee3be36c277482b93a2d4e5a73f3081d00ca58227768"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-first-user-story/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-first-user-story/tasks.md",
+    "sha256": "e872728dc20972caaeafd133c22363ae9bba68a2369de76935a47806e866ae09"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-first-user-story/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-first-user-story/specs/account-entry/spec.md",
+    "sha256": "06e6bf05bbb4f2619efc14c0e6c70783fcebac9739d87e612a3ea9c06a16c69c"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-03-add-first-user-story/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-03-add-first-user-story/specs/story-driven-demo/spec.md",
+    "sha256": "6a3b904c7effa9fc290e6deaf0e922ed5ecf04a1c60d85b9f2c30ee65a7ee00a"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/.openspec.yaml",
+    "sha256": "9a277390eee8e8a9c8df6ac33bdd8558ea577eaac9ae591300491c7b6bad89c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/build-verification.log",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/build-verification.log",
+    "sha256": "c40e9b1b0e3730430884bf4cf22526b1198fc69637a39a8446856282fa111726"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/C1_C4_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/C1_C4_VERIFICATION.md",
+    "sha256": "ef744010e69accbc95bdb1a1a7b4900d2beec88c011590a577e3a0d6e916e91c"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/design.md",
+    "sha256": "b60820fc5a1cd79875bf91a8afcc335500c8081120bd874651fc05f02ebf7e01"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/proposal.md",
+    "sha256": "656d55da45b3b1e6695ae078ca4173d02bbe8d298cff1141efe7b5bbbbe76cb4"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/tasks.md",
+    "sha256": "1f8151f7355d7adf3174fc9398aff61fb5231052ce22bc65e7560285c445b0c3"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/specs/asset-api/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/specs/asset-api/spec.md",
+    "sha256": "3c3ead36d5b4aa162cb8da46fd0316ce1627d8f6012e40d7f8330942394a0906"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-achievement-opportunities-and-collection/specs/story-driven-demo/spec.md",
+    "sha256": "44a16cf0b97b5907061fa2e6170b2458baa67d800b6f9a6dc9b979761c20f3b6"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/build-verification.log",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/build-verification.log",
+    "sha256": "33940adcdbfd32430c399958daee016482fd0de9e8ea2352e1aa5bd16571b340"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/design.md",
+    "sha256": "4db28cab4a7e831c213dbb4954680b4f4dd7739d84861e5fcf5dbaf5554d3317"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/ITERATION_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/ITERATION_VERIFICATION.md",
+    "sha256": "7f1e23b44b7e8bd439c61f77136931983b32a02c692067c1750512082afedc5c"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/proposal.md",
+    "sha256": "9842a726f40cb28ce95173fce53fe88863cf504ada944d9552229a93e18bafeb"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/tasks.md",
+    "sha256": "6410e8c17c4f92ab3bddea918a22d558a80ce9c9f2a01e4c6a850ada21fd2cf3"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/VERIFICATION.md",
+    "sha256": "e13f56816524b007a55845a2b8cb4ca14a734e4cf8007735bd429c53178c1eab"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/account-assets/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/account-assets/spec.md",
+    "sha256": "a6ca8d70eb6437227463d14bb0b623faffe5067e751d32bd96e6b60043be3a70"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/account-entry/spec.md",
+    "sha256": "cbee2c6b4b56274706ad7a51d3e9a08722cabee0c0d98d1714ee135b4398e3c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/asset-burning/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/asset-burning/spec.md",
+    "sha256": "14ff50f75662e6f343b3259cc902d2ff2f99a71e3ff3ef95c7ec883a9e70367d"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/transaction-row-presentation/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-assets-and-asset-detail/specs/transaction-row-presentation/spec.md",
+    "sha256": "f8ef463b110d2692f9e9b72a04fdecbd57b3b8ed75fb6e01d26444aa346f3583"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/design.md",
+    "sha256": "6fa54bb703179edda7f8c172db12bf83a51c8db98ffac6f27964be01e20256c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/FEASIBILITY.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/FEASIBILITY.md",
+    "sha256": "72e37683a47b9501b2372f49cd67d68d72d05665be8b3e8e8f1b1facbac9b4c5"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/proposal.md",
+    "sha256": "666b9f944a6e9b9b67f0809bff468b90a21694d412f999834131b31045a9d3e3"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/tasks.md",
+    "sha256": "8624a076fcab6453d868ad7800d7e5af76547a970a171c753c46dd628a23bbd2"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/VERIFICATION.md",
+    "sha256": "735dc03a4ae5e81c51b956c76298d9103b664e788afffeb977a2fe6456743fd1"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/specs/pay-to-continue/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/specs/pay-to-continue/spec.md",
+    "sha256": "acc611112b665f1ea0b4630978c21d4100b14854181ec272ed35766f12fe0bad"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-b-pay-to-continue-mvp/specs/story-driven-demo/spec.md",
+    "sha256": "fe57a83452b947866f21ef9dfe080753e02d9908491183d00f8511f7638cc548"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-d2a-address-receiving/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-d2a-address-receiving/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-d2a-address-receiving/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-d2a-address-receiving/design.md",
+    "sha256": "d3726dbe8054f8d5449f187dba5ea36c34cb9e632aee704a5b60523709203303"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-d2a-address-receiving/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-d2a-address-receiving/proposal.md",
+    "sha256": "673c1dd52178a56a217389b373175fc0512004113a9d726ba2d382c716ebf611"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-d2a-address-receiving/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-d2a-address-receiving/tasks.md",
+    "sha256": "6155354ec8671fbca805b8dd179ab2803ad679d502310e72f30cd8977bb7a5c9"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-d2a-address-receiving/verification.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-d2a-address-receiving/verification.md",
+    "sha256": "3a36f64130dffb7ac11f30df10da74a0cf0d1d6f8bcff4e6307f6397c54d1f80"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-d2a-address-receiving/specs/account-address-receiving/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-d2a-address-receiving/specs/account-address-receiving/spec.md",
+    "sha256": "221816c44d83fc932c9ca66d5673ae9ab59e9aa0830f399f4dbe8e9bf059f58e"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-d2a-address-receiving/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-d2a-address-receiving/specs/story-driven-demo/spec.md",
+    "sha256": "e5828d61166d8277f95577bb6f162cddde83050f89240a35ed07897ed1642263"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/design.md",
+    "sha256": "990ee1ad9577cad6414523a5849bb926325dff0e9705b5d1a0325a6a85e97240"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/proposal.md",
+    "sha256": "764a7e7d69402a45a5b2234947d0762a1e45f5014508edafae86974087fb54fc"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/tasks.md",
+    "sha256": "4096e5304c9ab37022340d773b71dbcd3e824ada3a81b485105204078aa0d4ea"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/verification.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/verification.md",
+    "sha256": "338a8b3cf5b8adbcc293eca137ac3af9467f08684e81bc6610c41501137a10df"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-activity/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-activity/spec.md",
+    "sha256": "51a9de5569788a8da1b19678beec967dc38fe0a2ebf27f20b14844f733f07041"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-address-receiving/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-address-receiving/spec.md",
+    "sha256": "581a8c01bd2efd2aad761985d61bb5fca7a6809509cbbc589c63394f3efff66d"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-assets/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-assets/spec.md",
+    "sha256": "1a90cc57319cfd7d76da52f5ac743ef80f03fb2a75c9cf1702ae4b82ea9a840d"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-balance/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-balance/spec.md",
+    "sha256": "a38a784754fa9492156817c214994bf3783ca8a2979ab04baae542c7ddd667c1"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-creation/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-creation/spec.md",
+    "sha256": "d28c6928587097d33f8315bc25893bf04500f8851443d08b3e4ac81819d02e04"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-logout/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-logout/spec.md",
+    "sha256": "813201c83879fca48d60bb490913dcd333709cbfbe2de310e33f5e8efc8e6ccc"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-restoration/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/account-restoration/spec.md",
+    "sha256": "29630af5541072477400aa0e8c393c09056f12fb5d1329634ddc1ec1284fea6d"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/asset-burning/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/asset-burning/spec.md",
+    "sha256": "2f36f2c2e1ca6346f4e4b490b2904f7508762172dad5862f94dcc200be5d518f"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-pending-operation-dialog/specs/pending-operation-dialog/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-pending-operation-dialog/specs/pending-operation-dialog/spec.md",
+    "sha256": "5c5f26f065bff8f54f29fbfce43c729d3b068b0700d7241dd9016a563a664717"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-transfer-recovery-report/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-transfer-recovery-report/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-transfer-recovery-report/design.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-transfer-recovery-report/design.md",
+    "sha256": "0563694cea2b15bae046378da83424c2f72afce8299f714385293915ee1bec0c"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-transfer-recovery-report/proposal.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-transfer-recovery-report/proposal.md",
+    "sha256": "a699cee6f8ea3a00c452e48d0936c233385f508b54a8034e8bd1945a97c6aca2"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-transfer-recovery-report/tasks.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-transfer-recovery-report/tasks.md",
+    "sha256": "b886ed124716160b34be0d82a32eebd790df07269f0e6c22fb37c68662378ca3"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-transfer-recovery-report/VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-transfer-recovery-report/VERIFICATION.md",
+    "sha256": "81973d1bd19f6287c2af6a9bc0d302e6ed9cac535bf3bd585491e3d177fe5772"
+  },
+  {
+    "source": ".openspec/changes/archive/2026-09-04-add-transfer-recovery-report/specs/transfer-recovery-report/spec.md",
+    "destination": ".openspec/history/template/changes/archive/2026-09-04-add-transfer-recovery-report/specs/transfer-recovery-report/spec.md",
+    "sha256": "42373309cc70f4cf86f546e0b0ea9e8708e75c61c200bab9fc6a2f3f856e88ea"
+  },
+  {
+    "source": ".openspec/changes/cancel-pending-transfer/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/cancel-pending-transfer/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/cancel-pending-transfer/design.md",
+    "destination": ".openspec/history/template/changes/cancel-pending-transfer/design.md",
+    "sha256": "b9faafb00e48089ea0f59cc442bec97eedd60298c08fa17547bb0114a514817f"
+  },
+  {
+    "source": ".openspec/changes/cancel-pending-transfer/FEASIBILITY.md",
+    "destination": ".openspec/history/template/changes/cancel-pending-transfer/FEASIBILITY.md",
+    "sha256": "1a9a6f2a18ab9fb9548825294cbd018d98af08f6d876a9cab278d35c7a8af39f"
+  },
+  {
+    "source": ".openspec/changes/cancel-pending-transfer/IMPLEMENTATION_FINDINGS.md",
+    "destination": ".openspec/history/template/changes/cancel-pending-transfer/IMPLEMENTATION_FINDINGS.md",
+    "sha256": "8f6454e6450dc22342782d27246bd755206fbf4632ce65c3feb7df36efd70a7b"
+  },
+  {
+    "source": ".openspec/changes/cancel-pending-transfer/proposal.md",
+    "destination": ".openspec/history/template/changes/cancel-pending-transfer/proposal.md",
+    "sha256": "8905de47d1bd946e3c6a37046a6344a2739ceaeea60ef7aa24733f3a0b2d7bcf"
+  },
+  {
+    "source": ".openspec/changes/cancel-pending-transfer/tasks.md",
+    "destination": ".openspec/history/template/changes/cancel-pending-transfer/tasks.md",
+    "sha256": "71e947866b93fc8a28e36bc29247f0f9e2cceb9dfea0705104f13ce9da6f6892"
+  },
+  {
+    "source": ".openspec/changes/cancel-pending-transfer/specs/account-transfer-cancellation/spec.md",
+    "destination": ".openspec/history/template/changes/cancel-pending-transfer/specs/account-transfer-cancellation/spec.md",
+    "sha256": "3fccbd55a1941077acc1b94d8a66191e33d25fca36ac8df28ac7975457434bb4"
+  },
+  {
+    "source": ".openspec/changes/fix-browser-state/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/fix-browser-state/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/fix-browser-state/LOGOUT_VERIFICATION.md",
+    "destination": ".openspec/history/template/changes/fix-browser-state/LOGOUT_VERIFICATION.md",
+    "sha256": "2ab8b0ef68af3c9a91c63fdc4a69113a7315d8a5e5450a81113a0283de4a88b5"
+  },
+  {
+    "source": ".openspec/changes/fix-browser-state/proposal.md",
+    "destination": ".openspec/history/template/changes/fix-browser-state/proposal.md",
+    "sha256": "47e901896b9a7ef544b516c6ca9e05b3a9d8d6031f6ef7754cf9664a104f9d30"
+  },
+  {
+    "source": ".openspec/changes/replace-documentation-with-screenshot/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/replace-documentation-with-screenshot/.openspec.yaml",
+    "sha256": "4bcf71f7951a76f7a41f70e0994227668bd21ddb2311e882c2f589b9241e0f0a"
+  },
+  {
+    "source": ".openspec/changes/replace-documentation-with-screenshot/design.md",
+    "destination": ".openspec/history/template/changes/replace-documentation-with-screenshot/design.md",
+    "sha256": "b82a1e695a8612c994fdc8ea3992f0cce2bc657ab29c2da780d55aa2ffc0a17d"
+  },
+  {
+    "source": ".openspec/changes/replace-documentation-with-screenshot/proposal.md",
+    "destination": ".openspec/history/template/changes/replace-documentation-with-screenshot/proposal.md",
+    "sha256": "fed4fc257ebc1ad2ad4bf8e6f00e0ff6c9ff9bca53dcc122099c5243668be40b"
+  },
+  {
+    "source": ".openspec/changes/replace-documentation-with-screenshot/tasks.md",
+    "destination": ".openspec/history/template/changes/replace-documentation-with-screenshot/tasks.md",
+    "sha256": "f0e6e55ad31169c7148797535a37fcb91a71f336bba1ef9e2f6b76c41d07886a"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/.openspec.yaml",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/.openspec.yaml",
+    "sha256": "2e327e7354a1d6f835806c8d80979c60ca218358c594a15e269d18e4611ed25a"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/design.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/design.md",
+    "sha256": "693d459a4a3ab8c32ab46d8d7fe535a741e7a15c574456473887aa3d57ab8496"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/proposal.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/proposal.md",
+    "sha256": "aca2ea32f117c5c64c1772a515337481c21915fc969e1b0ef9487db39435875f"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/tasks.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/tasks.md",
+    "sha256": "a7dafe9c0bc1a4085b96b147dbee1181711b6a621c26bf1311bed3306fb35bee"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/specs/account-address-sending/spec.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/specs/account-address-sending/spec.md",
+    "sha256": "b9ec1570e2391ed2946d968df6e84e64037ee33f770da209541c0eac1be1cde5"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/specs/account-boarding-settlement/spec.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/specs/account-boarding-settlement/spec.md",
+    "sha256": "e0da26d99c6325ba7358ad59b453f67e8856f47a05511750a8dd7f1c4f85df6b"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/specs/account-transfer-cancellation/spec.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/specs/account-transfer-cancellation/spec.md",
+    "sha256": "22343ba5cc75f7fec7aa35f4e8c93748d62db34b991d44f2204edf860a5785b0"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/specs/asset-api/spec.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/specs/asset-api/spec.md",
+    "sha256": "b6d680382e8aff3d82bd52e15940972a394649bbbf524cd355fd1a98096e48b3"
+  },
+  {
+    "source": ".openspec/changes/unblock-independent-wallet-operations/specs/wallet-operation-availability/spec.md",
+    "destination": ".openspec/history/template/changes/unblock-independent-wallet-operations/specs/wallet-operation-availability/spec.md",
+    "sha256": "a31b2337752afd7e5c636533ef5976013ddd658cc0a2cfc2e4e0054be8d511d9"
+  },
+  {
+    "source": ".openspec/specs/account-activity/spec.md",
+    "destination": ".openspec/history/template/specs/account-activity/spec.md",
+    "sha256": "ed53db881d0e71fb73a04ee73fe4695590d93c5db26eca7c9ae38770087a7465"
+  },
+  {
+    "source": ".openspec/specs/account-address-receiving/spec.md",
+    "destination": ".openspec/history/template/specs/account-address-receiving/spec.md",
+    "sha256": "67b3797e46a2756508e81031d2c21ca8de21a1fb0e47a6ecd9c6c7a7d7eda260"
+  },
+  {
+    "source": ".openspec/specs/account-address-sending/spec.md",
+    "destination": ".openspec/history/template/specs/account-address-sending/spec.md",
+    "sha256": "e15ee1253bff3abcfad790e3ca872b593e98c22084e8e3383b52f35ff3c51e93"
+  },
+  {
+    "source": ".openspec/specs/account-assets/spec.md",
+    "destination": ".openspec/history/template/specs/account-assets/spec.md",
+    "sha256": "16209c1b3a6f9cd2b7022b06167b4fd869d161aec7e68ab057e0701258a4f6b9"
+  },
+  {
+    "source": ".openspec/specs/account-balance/spec.md",
+    "destination": ".openspec/history/template/specs/account-balance/spec.md",
+    "sha256": "be25bf6aa04c78fb23845827ac7f283d45198030b5c04bf2af6756dc0cadad31"
+  },
+  {
+    "source": ".openspec/specs/account-boarding-settlement/spec.md",
+    "destination": ".openspec/history/template/specs/account-boarding-settlement/spec.md",
+    "sha256": "c50f91c392db6dfad7ad277d68c461dcffc2d99a4265052ff104658cd4c48a97"
+  },
+  {
+    "source": ".openspec/specs/account-creation/spec.md",
+    "destination": ".openspec/history/template/specs/account-creation/spec.md",
+    "sha256": "5bbc5db2512ade0eca252b7c9ac87df49551842a6b93cb0a0cde9c2d8dd58218"
+  },
+  {
+    "source": ".openspec/specs/account-entry/spec.md",
+    "destination": ".openspec/history/template/specs/account-entry/spec.md",
+    "sha256": "222a00b15bdda51eb131a40763c2c6325550c93029751bc4ac2980358178ff7e"
+  },
+  {
+    "source": ".openspec/specs/account-invoice-receiving/spec.md",
+    "destination": ".openspec/history/template/specs/account-invoice-receiving/spec.md",
+    "sha256": "bff1ea756bc0a1acfc6e31d4901a6d30dc2cb6383c3a065db0398981e4fa51b8"
+  },
+  {
+    "source": ".openspec/specs/account-logout/spec.md",
+    "destination": ".openspec/history/template/specs/account-logout/spec.md",
+    "sha256": "acce2bfa8839e671c35017a05ab7709ebdcaccc43e2cfb5473f1bf19e104cbb2"
+  },
+  {
+    "source": ".openspec/specs/account-restoration/spec.md",
+    "destination": ".openspec/history/template/specs/account-restoration/spec.md",
+    "sha256": "f19a269319239a090175a2e21a93789c326e1cc63f07a9980c8f09e027cfc2dc"
+  },
+  {
+    "source": ".openspec/specs/account-transfer-cancellation/spec.md",
+    "destination": ".openspec/history/template/specs/account-transfer-cancellation/spec.md",
+    "sha256": "ea07026333d048e48fd9614367c92d6e6704796816e4719be3e3e0827a570f00"
+  },
+  {
+    "source": ".openspec/specs/asset-api/spec.md",
+    "destination": ".openspec/history/template/specs/asset-api/spec.md",
+    "sha256": "a946a09be96d0010e019905ee62f27469861fddfda1081618b1351cf0958387a"
+  },
+  {
+    "source": ".openspec/specs/asset-burning/spec.md",
+    "destination": ".openspec/history/template/specs/asset-burning/spec.md",
+    "sha256": "cf4e4ecee79c07cbc92a17d25325e362934e24484cc32e0bd5b86e6fbba9fd53"
+  },
+  {
+    "source": ".openspec/specs/pay-to-continue/spec.md",
+    "destination": ".openspec/history/template/specs/pay-to-continue/spec.md",
+    "sha256": "07c72471aa3d3993289b5112cf0e881e99ffb2811461f04db467d484d6d889ed"
+  },
+  {
+    "source": ".openspec/specs/pending-operation-dialog/spec.md",
+    "destination": ".openspec/history/template/specs/pending-operation-dialog/spec.md",
+    "sha256": "53dd508429566ee5ef775ac2db9db0286e432c9d0cdcf0d3a0d55ee35f3f4aa5"
+  },
+  {
+    "source": ".openspec/specs/story-driven-demo/spec.md",
+    "destination": ".openspec/history/template/specs/story-driven-demo/spec.md",
+    "sha256": "788d14b705ae61ba5ac6dae067e4d27ed8bf1ca28648330da289f1aa6bb1131c"
+  },
+  {
+    "source": ".openspec/specs/transaction-row-presentation/spec.md",
+    "destination": ".openspec/history/template/specs/transaction-row-presentation/spec.md",
+    "sha256": "0cb77327d457ea20521d1a8372e84b4780f5f2c70bd7696833db55efadacb3a8"
+  },
+  {
+    "source": ".openspec/specs/transfer-recovery-report/spec.md",
+    "destination": ".openspec/history/template/specs/transfer-recovery-report/spec.md",
+    "sha256": "e309d01fac27952b18944fc138d275e1dec207c5a7c81801fb788a747535bf97"
+  },
+  {
+    "source": ".openspec/specs/wallet-operation-availability/spec.md",
+    "destination": ".openspec/history/template/specs/wallet-operation-availability/spec.md",
+    "sha256": "fa073b87f5238108f65c4abfe24c6fa763a03df752c3b596007f3db6ff65bab5"
+  },
+  {
+    "source": ".openspec/config.yaml",
+    "destination": ".openspec/history/template/config.yaml",
+    "sha256": "483d366989f7dc82b9af30b75120a8a8e0b90b965e654547d8a48e0c240f8ad5"
+  },
+  {
+    "source": ".openspec/setup.ps1",
+    "destination": ".openspec/history/template/setup.ps1",
+    "sha256": "85133c1d0c5a1b240e27e0fb315e4bc26b3291997b5cb20fd055b998e11a731d"
+  },
+  {
+    "source": "openspec/changes/c001-project-setup/.openspec.yaml",
+    "destination": ".openspec/changes/c001-project-setup/.openspec.yaml",
+    "sha256": "0d815ffdda0fec4cf9c7b2346a209fdec1bcde4f92cfb10c2075e2e381fd16f8"
+  },
+  {
+    "source": "openspec/changes/c001-project-setup/design.md",
+    "destination": ".openspec/changes/c001-project-setup/design.md",
+    "sha256": "985e550586737bcd7c4694046e09fe98800af788b74c1c62bf6a374ba1a10bea"
+  },
+  {
+    "source": "openspec/changes/c001-project-setup/proposal.md",
+    "destination": ".openspec/changes/c001-project-setup/proposal.md",
+    "sha256": "fe2eb0987f47fe03bdf282185a13e6e161dc3df996efb24560bc37932524e068"
+  },
+  {
+    "source": "openspec/changes/c001-project-setup/tasks.md",
+    "destination": ".openspec/changes/c001-project-setup/tasks.md",
+    "sha256": "6eee78e592296c6845fe73eb7f44a6e725d0f5a1e15acdb26ba5523181bc5f49"
+  },
+  {
+    "source": "openspec/changes/c001-project-setup/specs/project-setup/spec.md",
+    "destination": ".openspec/changes/c001-project-setup/specs/project-setup/spec.md",
+    "sha256": "9911a450ab400a0655c5db477f208255e64d31a2f89f3deb945cd6872a37c7ca"
+  },
+  {
+    "source": "openspec/changes/c002-floating-village-world/.openspec.yaml",
+    "destination": ".openspec/changes/c002-floating-village-world/.openspec.yaml",
+    "sha256": "0d815ffdda0fec4cf9c7b2346a209fdec1bcde4f92cfb10c2075e2e381fd16f8"
+  },
+  {
+    "source": "openspec/changes/c002-floating-village-world/design.md",
+    "destination": ".openspec/changes/c002-floating-village-world/design.md",
+    "sha256": "90f0285d79bad509dfcaafe7d57b927d55aed2e8c6c6badce208a8f0c92ea6fa"
+  },
+  {
+    "source": "openspec/changes/c002-floating-village-world/proposal.md",
+    "destination": ".openspec/changes/c002-floating-village-world/proposal.md",
+    "sha256": "d38397e8d4c57bd4256035947c0f74d5c5bfffff36b1a7cc013ace6c46d51df1"
+  },
+  {
+    "source": "openspec/changes/c002-floating-village-world/tasks.md",
+    "destination": ".openspec/changes/c002-floating-village-world/tasks.md",
+    "sha256": "551bfc53cf26f65799d9894c965cbbe6603eefb5351b75d62eb33d8857bab07e"
+  },
+  {
+    "source": "openspec/changes/c002-floating-village-world/specs/floating-village-world/spec.md",
+    "destination": ".openspec/changes/c002-floating-village-world/specs/floating-village-world/spec.md",
+    "sha256": "cfdfc927dc3c602974cdad9bf930330f0d9f1ba1a9f402c748e5b54484931bc9"
+  },
+  {
+    "source": "openspec/changes/c003-create-orange-character/.openspec.yaml",
+    "destination": ".openspec/changes/c003-create-orange-character/.openspec.yaml",
+    "sha256": "0d815ffdda0fec4cf9c7b2346a209fdec1bcde4f92cfb10c2075e2e381fd16f8"
+  },
+  {
+    "source": "openspec/changes/c003-create-orange-character/design.md",
+    "destination": ".openspec/changes/c003-create-orange-character/design.md",
+    "sha256": "657cb1f9db124c3003d66e41ef2109d8a4c623594d6f68d1016003a14e36d78a"
+  },
+  {
+    "source": "openspec/changes/c003-create-orange-character/proposal.md",
+    "destination": ".openspec/changes/c003-create-orange-character/proposal.md",
+    "sha256": "b014a5624c7f788b91e1a9e8a8ebadfc96a88bf0073225543ed8fef6a777eaf8"
+  },
+  {
+    "source": "openspec/changes/c003-create-orange-character/tasks.md",
+    "destination": ".openspec/changes/c003-create-orange-character/tasks.md",
+    "sha256": "be3424e920670f9497d12923fb44bc50db0060c3f3ef0b6c7874a752a51d6a88"
+  },
+  {
+    "source": "openspec/changes/c003-create-orange-character/specs/orange-character-asset/spec.md",
+    "destination": ".openspec/changes/c003-create-orange-character/specs/orange-character-asset/spec.md",
+    "sha256": "135c52bc05b6c35e65509906192c74f23db0e09dcd1527afb626f7da0370bf43"
+  },
+  {
+    "source": "openspec/changes/c004-gameplay-integration/.openspec.yaml",
+    "destination": ".openspec/changes/c004-gameplay-integration/.openspec.yaml",
+    "sha256": "0d815ffdda0fec4cf9c7b2346a209fdec1bcde4f92cfb10c2075e2e381fd16f8"
+  },
+  {
+    "source": "openspec/changes/c004-gameplay-integration/design.md",
+    "destination": ".openspec/changes/c004-gameplay-integration/design.md",
+    "sha256": "a9806be8ee69e46a0249ce74468dd259b654a4f9670ee483d34a6d590bf02e4f"
+  },
+  {
+    "source": "openspec/changes/c004-gameplay-integration/proposal.md",
+    "destination": ".openspec/changes/c004-gameplay-integration/proposal.md",
+    "sha256": "1c4d63d0e1d1bd933131ed49024f0ac33aa7fe71887613f1e32dc1a2da33c866"
+  },
+  {
+    "source": "openspec/changes/c004-gameplay-integration/tasks.md",
+    "destination": ".openspec/changes/c004-gameplay-integration/tasks.md",
+    "sha256": "abd4e3f3835f8b26b363c1721040b68a42b0b0e4da8c688a63ae2412c22bfb7a"
+  },
+  {
+    "source": "openspec/changes/c004-gameplay-integration/specs/portrait-gameplay/spec.md",
+    "destination": ".openspec/changes/c004-gameplay-integration/specs/portrait-gameplay/spec.md",
+    "sha256": "5e0bbca5bda512f0aa25df85c9eaa1aeb76d6fb5b04487acd1466f5bf416c11e"
+  },
+  {
+    "source": "openspec/changes/c005-vfx-upgrade/.openspec.yaml",
+    "destination": ".openspec/changes/c005-vfx-upgrade/.openspec.yaml",
+    "sha256": "0d815ffdda0fec4cf9c7b2346a209fdec1bcde4f92cfb10c2075e2e381fd16f8"
+  },
+  {
+    "source": "openspec/changes/c005-vfx-upgrade/design.md",
+    "destination": ".openspec/changes/c005-vfx-upgrade/design.md",
+    "sha256": "51738d8a9a345c7163e44dff60703768074d88b55c14162cd76c56d4dd3acd3f"
+  },
+  {
+    "source": "openspec/changes/c005-vfx-upgrade/proposal.md",
+    "destination": ".openspec/changes/c005-vfx-upgrade/proposal.md",
+    "sha256": "b1b8b1f7b3de56ac3eb9aee9a4878cf0ae394b5016ecb740c11b3db270cd1280"
+  },
+  {
+    "source": "openspec/changes/c005-vfx-upgrade/tasks.md",
+    "destination": ".openspec/changes/c005-vfx-upgrade/tasks.md",
+    "sha256": "5b4c6c6f39b7173ac7146aeeba2ba36f7228e9da3b370883e66cc28ad1dde52f"
+  },
+  {
+    "source": "openspec/changes/c005-vfx-upgrade/specs/village-vfx/spec.md",
+    "destination": ".openspec/changes/c005-vfx-upgrade/specs/village-vfx/spec.md",
+    "sha256": "ddd0129506952d0909cdebd99b663471e91f333187c435b22cbc980862dc5ebc"
+  },
+  {
+    "source": "openspec/changes/c006-project-structure-and-naming/.openspec.yaml",
+    "destination": ".openspec/changes/c006-project-structure-and-naming/.openspec.yaml",
+    "sha256": "3b90c55cd2bb25d5e53571040ef124edf84c8f3ca0dd96b2906abe0c6d11eb38"
+  },
+  {
+    "source": "openspec/changes/c006-project-structure-and-naming/design.md",
+    "destination": ".openspec/changes/c006-project-structure-and-naming/design.md",
+    "sha256": "cc309655ca641d62104b4767b1ed282cdac72b362914a3e136d39c42eb92bde9"
+  },
+  {
+    "source": "openspec/changes/c006-project-structure-and-naming/proposal.md",
+    "destination": ".openspec/changes/c006-project-structure-and-naming/proposal.md",
+    "sha256": "b4ad5ddbe4112879b162e345f27f4c0a6fc16b8b89eb8b89cfcf1a201e71ecb0"
+  },
+  {
+    "source": "openspec/changes/c006-project-structure-and-naming/tasks.md",
+    "destination": ".openspec/changes/c006-project-structure-and-naming/tasks.md",
+    "sha256": "a66c43fcf6ab3796b2cc2373075c4a311e9d2100dc5efc747dfba9403d98388e"
+  },
+  {
+    "source": "openspec/config.yaml",
+    "destination": ".openspec/config.yaml",
+    "sha256": "3b080bb567fb75cabbde35ea6f6267f1013d8ce0e6da4ac52a777cfffb10d3cf"
+  }
+]

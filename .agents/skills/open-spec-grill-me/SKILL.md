@@ -3,6 +3,11 @@ name: open-spec-grill-me
 description: Interview the user about an OpenSpec exploration, proposal, or standalone plan using consistent numbered choices and a recommended answer. Investigate codebase facts directly and reconcile confirmed decisions into authorized planning artifacts. Planning only; never implements code.
 ---
 
+## Repository command adapter
+
+Run CLI examples from the repository root through `node CITRUS_WORLD/scripts/openspec.mjs <arguments>`. For example, `openspec list --json` below means `node CITRUS_WORLD/scripts/openspec.mjs list --json`. Keep all arguments and store flags. Canonical files live in `.openspec/`; the launcher validates an ignored persistent `openspec` alias to those same files. Use `.openspec/` paths for edits, staging and published links. Inherited `.openspec/history/template/` content is historical, outside active planning.
+
+
 # Open Spec Grill Me
 
 Resolve material ambiguity through an adaptive, one-question-at-a-time

@@ -1,5 +1,7 @@
 # Requested demo and task coordination
 
+> Historical record from before C006: command paths and measurements below retain their original context. For current commands, use `CITRUS_WORLD/` as the application working directory and `documentation/` in place of `docs/`. See [C006 migration](../coordination/C006-structure.md).
+
 The user requests `babylon-lite-astra-blender-demo`, cloned from
 https://github.com/SamuelAsherRivello/github-repository-template and committed
 to a new public repository. Reference material informs appearance; instructions

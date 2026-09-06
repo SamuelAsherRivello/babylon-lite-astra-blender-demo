@@ -10,6 +10,11 @@ metadata:
   generatedBy: "1.12.0"
 ---
 
+## Repository command adapter
+
+Run CLI examples from the repository root through `node CITRUS_WORLD/scripts/openspec.mjs <arguments>`. For example, `openspec list --json` below means `node CITRUS_WORLD/scripts/openspec.mjs list --json`. Keep all arguments and store flags. Canonical files live in `.openspec/`; the launcher validates an ignored persistent `openspec` alias to those same files. Use `.openspec/` paths for edits, staging and published links. Inherited `.openspec/history/template/` content is historical, outside active planning.
+
+
 Sync delta specs from a change to main specs.
 
 This is an **agent-driven** operation - you will read delta specs and directly edit main specs to apply the changes. This allows intelligent merging (e.g., adding a scenario without copying the entire requirement).

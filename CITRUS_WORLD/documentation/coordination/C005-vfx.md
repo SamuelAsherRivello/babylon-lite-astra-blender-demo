@@ -1,5 +1,7 @@
 # C005 VFX upgrade
 
+> Historical record from before C006: command paths and measurements below retain their original context. For current commands, use `CITRUS_WORLD/` as the application working directory and `documentation/` in place of `docs/`. See [C006 migration](../coordination/C006-structure.md).
+
 The village now has sunlight sheen and scene reflections on gently flowing water, a small chimney plume, and subtle wind on all six trees. The first playtest retains all requested effects. Local demo: http://127.0.0.1:5173/.
 
 ## Implementation and tuning

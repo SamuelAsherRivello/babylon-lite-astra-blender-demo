@@ -32,13 +32,13 @@ This contract is the interface between C001 setup, C002 world, C003 character, a
 
 | Change | Owned authoring paths | Runtime outputs |
 | --- | --- | --- |
-| C002 world | `assets/blender/world/`, `docs/coordination/C002-world.md` | `public/assets/world/world.glb`, `public/assets/world/world.navigation.json` |
-| C003 character | `assets/blender/character/`, `docs/coordination/C003-character.md` | `public/assets/character/character.glb` |
+| C002 world | `assets/blender/world/`, `documentation/coordination/C002-world.md` | `public/assets/world/world.glb`, `public/assets/world/world.navigation.json` |
+| C003 character | `assets/blender/character/`, `documentation/coordination/C003-character.md` | `public/assets/character/character.glb` |
 | C004 integration | `src/`, integration tests and integration docs | Browser game |
 
-World entry script is `assets/blender/world/create_world.py`; character entry script is `assets/blender/character/create_character.py`. Each determines the repo root from `__file__`, starts from a clean scene, uses a fixed random seed, saves its `.blend` into its own authoring folder, and exports to its owned runtime folder. Source scripts and `.blend` files are committed; `.blend1` backups and `.local/` tools/references are ignored. Reference input images are not published.
+World entry script is `assets/blender/world/create_world.py`; character entry script is `assets/blender/character/create_character.py`. Each determines the application root from `__file__`, starts from a clean scene, uses a fixed random seed, saves its `.blend` into its own authoring folder, and exports to its owned runtime folder. Source scripts and `.blend` files are committed; `.blend1` backups and `.local/` tools/references are ignored. Reference input images are not published.
 
-Run authoring with `npm run blender -- --background --factory-startup --python assets/blender/world/create_world.py` (replace with the character path as needed). Independent background Blender processes are safe with these disjoint outputs. Assets must not require the interactive MCP server to rebuild.
+From `CITRUS_WORLD/`, run authoring with `npm run blender -- --background --factory-startup --python assets/blender/world/create_world.py` (replace with the character path as needed). Independent background Blender processes are safe with these disjoint outputs. Assets must not require the interactive MCP server to rebuild.
 
 ## Navigation JSON version 1
 

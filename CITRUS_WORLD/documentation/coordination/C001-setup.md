@@ -1,5 +1,7 @@
 # C001 setup handoff
 
+> Historical record from before C006: command paths and measurements below retain their original context. For current commands, use `CITRUS_WORLD/` as the application working directory and `documentation/` in place of `docs/`. See [C006 migration](../coordination/C006-structure.md).
+
 ## Delivered
 
 - Public repository: [SamuelAsherRivello/babylon-lite-astra-blender-demo](https://github.com/SamuelAsherRivello/babylon-lite-astra-blender-demo).

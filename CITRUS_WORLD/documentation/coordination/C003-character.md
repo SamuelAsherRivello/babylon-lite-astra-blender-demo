@@ -1,5 +1,7 @@
 # C003 character delivery
 
+> Historical record from before C006: command paths and measurements below retain their original context. For current commands, use `CITRUS_WORLD/` as the application working directory and `documentation/` in place of `docs/`. See [C006 migration](../coordination/C006-structure.md).
+
 Original orange fruit character, authored and verified with Blender **5.2.1 LTS** on 2026-09-06. Planning change: `c003-create-orange-character`; proposal, design, specs and tasks were created and strictly validated before implementation.
 
 ## Rebuild

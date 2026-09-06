@@ -1,5 +1,7 @@
 # C004 gameplay handoff
 
+> Historical record from before C006: command paths and measurements below retain their original context. For current commands, use `CITRUS_WORLD/` as the application working directory and `documentation/` in place of `docs/`. See [C006 migration](../coordination/C006-structure.md).
+
 Verified 2026-09-06. Change: `c004-gameplay-integration`. Proposal, specification, design and tasks were completed before the authorized apply phase.
 
 ## Delivered behavior

@@ -1,5 +1,7 @@
 # C002 world handoff
 
+> Historical record from before C006: command paths and measurements below retain their original context. For current commands, use `CITRUS_WORLD/` as the application working directory and `documentation/` in place of `docs/`. See [C006 migration](../coordination/C006-structure.md).
+
 Verified 2026-09-06 using Blender 5.2.1 LTS. Change: `c002-floating-village-world`.
 
 ## Original C002 delivery (before the C005 extension below)

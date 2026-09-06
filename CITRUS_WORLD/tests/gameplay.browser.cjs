@@ -7,7 +7,12 @@ async (sourcePage) => {
   const url = sourcePage.url();
   const state = () => page.evaluate(() => window.__littleCitrus.snapshot());
   const settle = () => page.waitForTimeout(140);
-  const fresh = async () => { await page.goto(url); await page.waitForFunction(() => window.__littleCitrus); await page.bringToFront(); await page.waitForTimeout(500); };
+  const fresh = async () => {
+    await page.goto(url); await page.waitForFunction(() => window.__littleCitrus); await page.bringToFront();
+    // Diagnostic registration precedes the render loop. Wait for real frames
+    // before timing movement, especially during a fresh WebGPU pipeline compile.
+    await page.waitForFunction(() => window.__littleCitrus.snapshot().vfx?.updates >= 30);
+  };
   const distance = (a, b) => Math.hypot(a.player.x - b.player.x, a.player.z - b.player.z);
   const centered = s => s.camera.target.every(v => v === 0) && s.safe && s.player.y === 0;
   const errors = [];

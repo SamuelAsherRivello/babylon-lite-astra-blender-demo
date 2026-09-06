@@ -1,8 +1,8 @@
-# Project-local integration. Install with python scripts/setup-blender-mcp.py.
+# Project-local integration. Install with python CITRUS_WORLD/scripts/setup-blender-mcp.py.
 # Start the dedicated Blender bridge before using scene tools.
 [mcp_servers.blender]
 command = "node"
-args = ["scripts/blender-mcp-server.mjs"]
+args = ["CITRUS_WORLD/scripts/blender-mcp-server.mjs"]
 startup_timeout_sec = 30
 tool_timeout_sec = 120
 enabled_tools = ["get_scene_info", "get_object_info", "get_viewport_screenshot", "execute_blender_code"]

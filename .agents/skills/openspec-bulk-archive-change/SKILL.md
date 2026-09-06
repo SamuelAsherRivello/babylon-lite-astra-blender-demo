@@ -10,6 +10,11 @@ metadata:
   generatedBy: "1.12.0"
 ---
 
+## Repository command adapter
+
+Run CLI examples from the repository root through `node CITRUS_WORLD/scripts/openspec.mjs <arguments>`. For example, `openspec list --json` below means `node CITRUS_WORLD/scripts/openspec.mjs list --json`. Keep all arguments and store flags. Canonical files live in `.openspec/`; the launcher validates an ignored persistent `openspec` alias to those same files. Use `.openspec/` paths for edits, staging and published links. Inherited `.openspec/history/template/` content is historical, outside active planning.
+
+
 Archive multiple completed changes in a single operation.
 
 This skill allows you to batch-archive changes, handling spec conflicts intelligently by checking the codebase to determine what's actually implemented.
