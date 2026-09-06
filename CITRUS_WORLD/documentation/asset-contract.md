@@ -19,6 +19,14 @@ Foliage keeps its original center pivot, position, scale and local geometry. Tru
 
 This contract is the interface between C001 setup, C002 world, C003 character, and C004 integration.
 
+### C007 looping water textures
+
+Runtime generates a 128-square periodic color texture and related normal texture for each of the three water groups. Both `Water` and `WaterLight` use the group's same texture pair and phase; fixed glint contrast is reduced to 8% of its original difference from the base tint. Meshes and their UVs remain unchanged. Texture coordinates retain 0.8 repeats/meter: the river travels toward runtime +Z with a 12-active-second repeat, and both falls travel toward -Y with a 6-active-second repeat. The river uses a negative sampling offset normalized into [0, 1); falls use positive offsets. Repeat addressing and periodic pixel generation make rollover continuous.
+
+Color and normal textures are allocated once, updated through offsets once per game frame, and disposed with their owning VFX controller. The existing three reflection targets, original material restoration, hidden-tab pause and clamped resume timing are retained. No external image or Blender rebuild is needed. `tests/water-asset.test.js` verifies all six shipped GLB bindings and their projected UVs; `tests/water.test.ts` verifies direction, timing and periodic sampling. See [C007 water verification](coordination/C007-water-flow.md) for browser evidence and performance limits.
+
+Reflection targets refresh each frame only when the surface is in the camera frustum and viewed from its exterior side. The island hides the back of each waterfall; that target retains its cached image until orbiting exposes it. Water texture offsets continue advancing on all three surfaces.
+
 ## Coordinates and exports
 
 - Runtime uses right-handed coordinates (`scene.useRightHandedSystem = true`), meters, Y up, and X/Z ground plane. Ground height is `y = 0`.

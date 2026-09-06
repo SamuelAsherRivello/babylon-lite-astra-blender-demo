@@ -6,6 +6,7 @@ import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 import { TransformNode } from '@babylonjs/core/Meshes/transformNode';
 import { CreateBox } from '@babylonjs/core/Meshes/Builders/boxBuilder';
 import { PBRMaterial } from '@babylonjs/core/Materials/PBR/pbrMaterial';
+import { Texture } from '@babylonjs/core/Materials/Textures/texture';
 import { createVfx, TREE_BINDINGS } from '../src/vfx';
 
 function fixture() {
@@ -23,6 +24,46 @@ function fixture() {
 }
 
 describe('effects lifecycle and bindings', () => {
+  it('refreshes reflections only on the camera-facing side and switches after orbiting', () => {
+    const { engine, scene, world } = fixture();
+    try {
+      const fx = createVfx(scene, world);
+      const camera = scene.activeCamera as ArcRotateCamera;
+      const surfaces = ['River', 'FallSouth', 'FallNorth'];
+      const resets = surfaces.map(name => vi.spyOn(scene.textures.find(t => t.name === `vfx-reflection-${name}`)! as import('@babylonjs/core/Materials/Textures/mirrorTexture').MirrorTexture, 'resetRefreshCounter'));
+      for (const z of [15, -15, 15]) {
+        camera.setPosition(new Vector3(0, 8, z)); scene.render();
+        resets.forEach(spy => spy.mockClear());
+        fx.update(1 / 60);
+        expect(resets.map(spy => spy.mock.calls.length)).toEqual(z > 0 ? [1, 1, 0] : [1, 0, 1]);
+      }
+    } finally { scene.dispose(); engine.dispose(); }
+  });
+  it('shares aligned flow textures per surface, allocates only at creation and restores materials', () => {
+    const { engine, scene, world } = fixture();
+    try {
+      const original = world.map(m => m.material);
+      const beforeTextures = scene.textures.length;
+      const fx = createVfx(scene, world);
+      expect(scene.textures.length - beforeTextures).toBe(9); // Three mirrors, three color/normal pairs.
+      const owned = scene.textures.filter(t => t.name.startsWith('vfx-'));
+      const disposals = owned.map(t => vi.spyOn(t, 'dispose'));
+      const counts = [scene.meshes.length, scene.materials.length, scene.textures.length];
+      for (let i = 0; i < 1500; i++) fx.update(1 / 60);
+      expect([scene.meshes.length, scene.materials.length, scene.textures.length]).toEqual(counts);
+      for (const surface of ['River', 'FallSouth', 'FallNorth']) {
+        const materials = ['Water', 'WaterLight'].map(suffix => scene.getMeshByName(`VFX_Water_${surface}_${suffix}`)!.material as PBRMaterial);
+        const color = materials[0].albedoTexture!, normal = materials[0].bumpTexture!;
+        expect(color).toBeTruthy(); expect(normal).toBeTruthy();
+        expect(materials[1].albedoTexture).toBe(color); expect(materials[1].bumpTexture).toBe(normal);
+        expect(color.wrapU).toBe(Texture.WRAP_ADDRESSMODE); expect(color.wrapV).toBe(Texture.WRAP_ADDRESSMODE);
+        expect((color as Texture).vOffset).toBe((normal as Texture).vOffset);
+      }
+      fx.dispose(); fx.dispose();
+      for (const spy of disposals) expect(spy).toHaveBeenCalledTimes(1);
+      expect(world.map(m => m.material)).toEqual(original);
+    } finally { scene.dispose(); engine.dispose(); }
+  });
   it('isolates foliage, shares no recursive targets, and releases resources on repeated use', async () => {
     const { engine, scene, stationary, world } = fixture();
     try {

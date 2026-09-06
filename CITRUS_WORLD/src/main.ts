@@ -16,7 +16,7 @@ import { bindControls, cameraRelative, constrainCamera } from './controls';
 import { isWalkable, moveOnGround, validateNavigation } from './navigation';
 import { addSky } from './sky';
 import { createVfx } from './vfx';
-import './style.css';
+import { watchActivity } from './activity';
 
 const canvas = document.querySelector<HTMLCanvasElement>('#renderCanvas')!;
 const status = document.querySelector<HTMLElement>('#status')!;
@@ -24,6 +24,14 @@ const loading = document.querySelector<HTMLElement>('#loading')!;
 const initialView = { alpha: 0.96, beta: 0.96, radius: 26.5 };
 const base = import.meta.env.BASE_URL;
 let dispose = () => {};
+let updateRendering = (_sleeping: boolean) => {}, clearInput = () => {};
+let renderedFrames = 0;
+const activity = watchActivity(sleeping => {
+  document.body.classList.toggle('sleeping', sleeping);
+  document.querySelector('#sleep-overlay')!.setAttribute('aria-hidden', String(!sleeping));
+  if (sleeping) clearInput();
+  updateRendering(sleeping);
+});
 
 async function start() {
   const qa = import.meta.env.DEV || import.meta.env.MODE === 'qa';
@@ -51,6 +59,7 @@ async function start() {
   const zoom = (delta: number) => { camera.radius += delta; applyCamera(); };
   const inputs = bindControls(canvas, document.querySelector('#joystick')!, document.querySelector('#joystick-knob')!,
     (dx, dy) => { camera.alpha += dx * 0.007; camera.beta -= dy * 0.006; applyCamera(); }, zoom);
+  clearInput = inputs.clear;
   const hemi = new HemisphericLight('sky', new Vector3(0, 1, 0), scene);
   hemi.intensity = 0.85; hemi.groundColor = Color3.FromHexString('#a7ba9b');
   const sun = new DirectionalLight('sun', new Vector3(-0.6, -1, 0.4), scene);
@@ -58,9 +67,9 @@ async function start() {
   sun.diffuse = Color3.FromHexString('#fff3dc');
   const shadow = new ShadowGenerator(2048, sun);
   shadow.usePercentageCloserFiltering = true; shadow.bias = 0.001; shadow.normalBias = 0.03; shadow.darkness = 0.2;
-  const resize = new ResizeObserver(() => { inputs.clear(); engine.resize(); });
+  const resize = new ResizeObserver(() => { inputs.clear(); if (!activity.sleeping()) engine.resize(); });
   resize.observe(canvas);
-  dispose = () => { resize.disconnect(); inputs.dispose(); scene.dispose(); engine.dispose(); delete (window as Window & { __littleCitrus?: unknown }).__littleCitrus; };
+  dispose = () => { updateRendering = () => {}; clearInput = () => {}; resize.disconnect(); inputs.dispose(); scene.dispose(); engine.dispose(); delete (window as Window & { __littleCitrus?: unknown }).__littleCitrus; };
 
   const navResponse = await fetch(`${base}assets/world/world.navigation.json`);
   if (!navResponse.ok) throw new Error(`Village navigation failed to load (${navResponse.status}).`);
@@ -85,6 +94,20 @@ async function start() {
     if (mesh.getTotalVertices() > 0) shadow.addShadowCaster(mesh, false);
   }
   const effects = qaOptions.get('vfx') === 'off' ? undefined : createVfx(scene, world.meshes);
+  let profile: (() => unknown) | undefined;
+  if (qa && qaOptions.has('profile')) {
+    const { SceneInstrumentation } = await import('@babylonjs/core/Instrumentation/sceneInstrumentation');
+    const meter = new SceneInstrumentation(scene);
+    meter.captureFrameTime = true; meter.captureRenderTargetsRenderTime = true;
+    meter.captureRenderTime = true; meter.captureActiveMeshesEvaluationTime = true;
+    let shadowRenders = 0;
+    shadow.getShadowMap()?.onAfterRenderObservable.add(() => { shadowRenders++; });
+    scene.onDisposeObservable.add(() => meter.dispose());
+    profile = () => ({ drawCalls: meter.drawCallsCounter.current, cpuFrameMs: meter.frameTimeCounter.average,
+      renderTargetsMs: meter.renderTargetsRenderTimeCounter.average, mainRenderMs: meter.renderTimeCounter.average,
+      activeMeshesMs: meter.activeMeshesEvaluationTimeCounter.average, shadowRenders,
+      activeMeshes: scene.getActiveMeshes().length, renderSize: [engine.getRenderWidth(), engine.getRenderHeight()] });
+  }
   await scene.whenReadyAsync();
   loading.hidden = true; status.textContent = 'Your little world is ready.';
   canvas.dataset.renderer = renderer; canvas.dataset.ready = 'true';
@@ -95,12 +118,17 @@ async function start() {
       camera: { alpha: camera.alpha, beta: camera.beta, radius: camera.radius, target: camera.target.asArray() },
       input: inputs.read(), safe: isWalkable(player.position, nav), meshes: world.meshes.length,
       vfx: effects?.snapshot(),
+      profile: profile?.(),
+      activity: { sleeping: activity.sleeping(), renderLoops: engine.activeRenderLoops.length, frames: renderedFrames,
+        renderSize: [engine.getRenderWidth(), engine.getRenderHeight()] },
     }) };
   }
   engine.resize();
-  engine.runRenderLoop(() => {
+  let resumeFrame = true;
+  const render = () => {
+    const delta = resumeFrame || document.hidden ? 0 : engine.getDeltaTime() / 1000;
     const direction = cameraRelative(inputs.read(), camera.position);
-    const next = moveOnGround(player.position, { x: direction.x * 2, z: direction.z * 2 }, engine.getDeltaTime() / 1000, nav);
+    const next = moveOnGround(player.position, { x: direction.x * 2, z: direction.z * 2 }, delta, nav);
     const dx = next.x - player.position.x, dz = next.z - player.position.z;
     const moving = Math.hypot(dx, dz) > 0.00001;
     if (moving) player.rotation.y = Math.atan2(dx, dz);
@@ -109,8 +137,18 @@ async function start() {
     if (desired !== animation) {
       (moving ? idle : walk).stop(); (moving ? walk : idle).start(true); animation = desired;
     }
-    applyCamera(); effects?.update(document.hidden ? 0 : engine.getDeltaTime() / 1000); scene.render();
-  });
+    applyCamera(); effects?.update(delta);
+    // Discard suspended wall time for Babylon's character animation clock as well.
+    const animationScale = scene.animationTimeScale;
+    if (resumeFrame) scene.animationTimeScale = 0;
+    try { scene.render(); renderedFrames++; }
+    finally { scene.animationTimeScale = animationScale; resumeFrame = false; }
+  };
+  updateRendering = sleeping => {
+    if (sleeping) { engine.stopRenderLoop(render); inputs.clear(); }
+    else { engine.resize(); resumeFrame = true; engine.runRenderLoop(render); }
+  };
+  updateRendering(activity.sleeping());
 }
 
 start().catch((error: unknown) => {
@@ -121,4 +159,4 @@ start().catch((error: unknown) => {
   const retry = document.querySelector<HTMLButtonElement>('#retry')!;
   retry.hidden = false; retry.addEventListener('click', () => window.location.reload());
 });
-import.meta.hot?.dispose(() => dispose());
+import.meta.hot?.dispose(() => { activity.dispose(); document.body.classList.remove('sleeping'); dispose(); });

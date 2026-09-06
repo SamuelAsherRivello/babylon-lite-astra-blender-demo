@@ -59,6 +59,8 @@ Citrus World presents a pastel cottage, mint-roof tower, stream and bridge insid
 
 Drag the world with the left mouse button or a finger to orbit its fixed center. Scroll to zoom. The camera stays independent of the character. Joystick release, cancellation, focus loss and resizing clear active input.
 
+Water flows along the river and down both waterfalls, with gentle foliage motion and chimney smoke. When the game loses focus, a subtle Sleeping overlay appears and rendering pauses until you return.
+
 ### 📝 Documentation
 
 <!-- AI: Link to the main documentation files that actually exist using relative Markdown links and a short purpose for each. Update links when files move; do not reference documentation inherited from another project unless present here. -->
@@ -68,6 +70,8 @@ Drag the world with the left mouse button or a finger to orbit its fixed center.
 - [Blender toolchain](CITRUS_WORLD/documentation/blender-toolchain.md): Project-local Blender and MCP setup and verification.
 - [Structure migration](CITRUS_WORLD/documentation/coordination/C006-structure.md): Folder mapping and current commands.
 - [Gameplay verification](CITRUS_WORLD/documentation/coordination/C004-gameplay.md): Controls, browser acceptance and screenshot evidence.
+- [Water and sleep verification](CITRUS_WORLD/documentation/coordination/C007-water-flow.md): Looping water, startup stability and focus-based sleep.
+- [v0.2.0 release notes](CITRUS_WORLD/documentation/releases/v0.2.0.md): Changes and verification for the current release.
 
 ### 📝 Structure
 

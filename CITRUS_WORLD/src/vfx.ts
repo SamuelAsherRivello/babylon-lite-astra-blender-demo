@@ -9,26 +9,30 @@ import { Texture } from '@babylonjs/core/Materials/Textures/texture';
 import { Color3 } from '@babylonjs/core/Maths/math.color';
 import { Plane } from '@babylonjs/core/Maths/math.plane';
 import { Quaternion, Vector3 } from '@babylonjs/core/Maths/math.vector';
-import { advanceVfxTime, sampleSmoke, sampleWind, VFX } from './vfx-motion';
+import { advanceVfxTime, sampleSmoke, sampleWater, sampleWaterDetail, sampleWind, VFX } from './vfx-motion';
 
 export const TREE_BINDINGS = [
   ['Blossom_tree', 4], ['Front_west_pear_tree', 4], ['Front_east_pear_tree', 4],
   ['East_spruce', 3], ['West_spruce', 3], ['Rear_spruce', 3],
 ] as const;
 
-function rippleTexture(scene: Scene, name: string) {
-  const size = 64, pixels = new Uint8Array(size * size * 4);
+function flowTextures(scene: Scene, name: string) {
+  const size = VFX.water.textureSize;
+  const colors = new Uint8Array(size * size * 4), normals = new Uint8Array(size * size * 4);
   for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
-    const u = x / size * Math.PI * 2, v = y / size * Math.PI * 2;
-    const nx = .13 * Math.cos(u * 2 + v) + .05 * Math.cos(u * 5 - v * 3);
-    const ny = .09 * Math.cos(u * 2 + v) - .07 * Math.sin(v * 4 - u);
-    const n = new Vector3(nx, ny, 1).normalize();
-    pixels.set([Math.round((n.x + 1) * 127.5), Math.round((n.y + 1) * 127.5), Math.round((n.z + 1) * 127.5), 255], (y * size + x) * 4);
+    const detail = sampleWaterDetail(x / size, y / size);
+    const shade = Math.round((.6 + .4 * detail.light) * 255);
+    colors.set([shade, shade, shade, 255], (y * size + x) * 4);
+    const n = new Vector3(-detail.dx, -detail.dy, 1).normalize();
+    normals.set([Math.round((n.x + 1) * 127.5), Math.round((n.y + 1) * 127.5), Math.round((n.z + 1) * 127.5), 255], (y * size + x) * 4);
   }
-  const texture = RawTexture.CreateRGBATexture(pixels, size, size, scene, true, false, Texture.TRILINEAR_SAMPLINGMODE);
-  texture.name = name; texture.gammaSpace = false;
-  texture.wrapU = texture.wrapV = Texture.WRAP_ADDRESSMODE;
-  return texture;
+  const create = (pixels: Uint8Array, suffix: string) => {
+    const texture = RawTexture.CreateRGBATexture(pixels, size, size, scene, true, false, Texture.TRILINEAR_SAMPLINGMODE);
+    texture.name = `vfx-flow-${name}-${suffix}`; texture.gammaSpace = false;
+    texture.wrapU = texture.wrapV = Texture.WRAP_ADDRESSMODE;
+    return texture;
+  };
+  return { color: create(colors, 'color'), normal: create(normals, 'normal') };
 }
 
 /** Owns environmental resources; update exactly once before scene.render(), never in a reflection callback. */
@@ -64,21 +68,22 @@ export function createVfx(scene: Scene, world: readonly AbstractMesh[]) {
     mirror.renderList = reflectList;
     mirror.level = VFX.water.reflection;
     mirror.refreshRate = 0; // Reset only while visible, below.
-    const normal = rippleTexture(scene, `vfx-flow-${name}`);
+    const { color, normal } = flowTextures(scene, name);
+    const tint = mesh.material instanceof PBRMaterial ? mesh.material.albedoColor.clone() : Color3.FromHexString('#7fc8d2').toLinearSpace();
     const materials = [mesh, glints].map((part, index) => {
       const original = part.material;
       const material = new PBRMaterial(`vfx-water-${name}-${index}`, scene);
-      material.albedoColor = original instanceof PBRMaterial ? original.albedoColor.clone() : Color3.FromHexString('#7fc8d2').toLinearSpace();
+      material.albedoColor = index && original instanceof PBRMaterial ? Color3.Lerp(tint, original.albedoColor, .08) : tint.clone();
       material.metallic = 0; material.roughness = VFX.water.roughness;
       material.metallicF0Factor = 2.5;
       material.backFaceCulling = false;
-      material.reflectionTexture = mirror; material.bumpTexture = normal;
+      material.reflectionTexture = mirror; material.bumpTexture = normal; material.albedoTexture = color;
       part.material = material;
       return { part, original, material };
     });
     let renders = 0;
     mirror.onAfterRenderObservable.add(() => { renders++; });
-    return [{ name, mesh, plane, mirror, normal, materials, river, renders: () => renders }];
+    return [{ name, mesh, plane, mirror, normal, color, materials, river, visible: false, renders: () => renders }];
   });
   const anchors = scene.transformNodes.filter(n => n.name === 'VFX_Chimney');
   if (anchors.length !== 1) issues.push(`VFX_Chimney: expected one anchor, found ${anchors.length}`);
@@ -111,7 +116,7 @@ export function createVfx(scene: Scene, world: readonly AbstractMesh[]) {
       mesh.position.set(origin.x + p.x, origin.y + p.y, origin.z + p.z);
       mesh.scaling.setAll(p.radius); material.alpha = p.alpha;
     });
-    for (const s of surfaces) s.normal.vOffset = (time * (s.river ? -VFX.water.speed : VFX.water.fallSpeed)) % 1;
+    for (const s of surfaces) s.color.vOffset = s.normal.vOffset = sampleWater(time, s.river).offset;
   }
   function dispose() {
     if (disposed) return;
@@ -122,7 +127,7 @@ export function createVfx(scene: Scene, world: readonly AbstractMesh[]) {
     }
     for (const s of surfaces) {
       for (const m of s.materials) { m.part.material = m.original; m.material.dispose(); }
-      s.mirror.dispose(); s.normal.dispose();
+      s.mirror.dispose(); s.normal.dispose(); s.color.dispose();
     }
     for (const p of puffs) { p.mesh.dispose(); p.material.dispose(); }
     scene.onDisposeObservable.remove(onDispose);
@@ -134,13 +139,19 @@ export function createVfx(scene: Scene, world: readonly AbstractMesh[]) {
       if (disposed) return;
       time = advanceVfxTime(time, delta); updates++; pose();
       const camera = scene.activeCamera;
-      for (const s of surfaces) if (!camera || camera.isInFrustum(s.mesh)) s.mirror.resetRefreshCounter();
+      for (const s of surfaces) {
+        // The island hides the back of each fall; refresh its reflection only from the exterior side.
+        s.visible = !camera || (s.plane.signedDistanceTo(camera.globalPosition) < 0 && camera.isInFrustum(s.mesh));
+        if (s.visible) s.mirror.resetRefreshCounter();
+      }
     },
     dispose,
     snapshot: () => ({ time, updates, disposed, issues, origin: origin.asArray(),
       foliage: foliage.map(f => ({ name: f.mesh.name, tree: f.tree, position: f.mesh.position.asArray(), rest: f.position.asArray(), width: f.width })),
       smoke: puffs.map((p, i) => ({ ...sampleSmoke(time, i), position: p.mesh.position.asArray() })),
-      water: surfaces.map(s => ({ name: s.name, plane: s.plane.asArray(), size: s.mirror.getSize().width, renders: s.renders(), flow: s.normal.vOffset,
+      water: surfaces.map(s => ({ name: s.name, plane: s.plane.asArray(), size: s.mirror.getSize().width, renders: s.renders(), visible: s.visible, flow: s.normal.vOffset,
+        colorFlow: s.color.vOffset, period: sampleWater(time, s.river).period, textureSize: s.color.getSize().width,
+        texturedParts: s.materials.filter(m => m.part.material === m.material && m.material.albedoTexture === s.color && m.material.bumpTexture === s.normal).length,
         reflectionMeshes: s.mirror.renderList?.length, recursive: s.mirror.renderList?.some(m => waterMeshes.includes(m)) })),
     }),
   };

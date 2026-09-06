@@ -18,11 +18,15 @@ h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 9.7cqw; font-wei
 .direction { position: absolute; color: #bdc7b8; font-size: 3.2cqw; font-style: normal; line-height: 1; }
 .up { top: 9%; left: 45%; }.down { bottom: 8%; left: 45%; }.left { top: 43%; left: 11%; }.right { top: 43%; right: 11%; }
 .heading-subtitle, .movement-hint { font-weight: 600; letter-spacing: .16em; line-height: 1.8; color: #718572; }
-.movement-hint { position: absolute; top: 72%; margin: 0; font-size: 3.7cqw; text-align: center; }
+.movement-hint { position: absolute; top: calc(72% - 30px); margin: 0; font-size: 3.7cqw; line-height: 1.4; text-align: center; }
 .loading { position: absolute; inset: 30% 8% 35%; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; font-size: 3cqw; background: #e7ede4e8; border-radius: 24px; }
 .loading[hidden] { display: none; }
 .loading-dot { width: 7cqw; height: 7cqw; background: #eaae74; border-radius: 50%; box-shadow: inset -3px -3px 0 #ce8e6433; animation: breathe 1.6s ease-in-out infinite alternate; }
 #retry { border-radius: 18px; padding: 8px 20px; }
 @keyframes breathe { to { transform: translateY(-6px); opacity: .6; } }
+#sleep-overlay { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; background: #0009; color: #fffd; font-size: 14px; font-weight: 500; letter-spacing: .12em; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, visibility .18s; }
+body.sleeping #sleep-overlay { opacity: 1; visibility: visible; }
+body.sleeping .loading-dot { animation-play-state: paused; }
 @media (max-width: 440px) { body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }.game { width: min(100%, calc((100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom)) * 9 / 16)); border-radius: 18px; } }
 @media (prefers-reduced-motion: reduce) { .loading-dot { animation: none; } }
+@media (prefers-reduced-motion: reduce) { #sleep-overlay { transition: none; } }

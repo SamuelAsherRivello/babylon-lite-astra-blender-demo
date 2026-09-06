@@ -35,7 +35,8 @@ async (sourcePage) => {
     }
     const next = await state();
     assert(next.vfx.foliage.every((f, i) => Math.abs(f.position[0]-first.vfx.foliage[i].position[0]) > .000001), 'Every foliage unit actually moved');
-    assert(next.vfx.water.every((w,i) => w.flow !== first.vfx.water[i].flow && w.renders > first.vfx.water[i].renders), 'Water flows and reflections refresh');
+    assert(next.vfx.water.every((w,i) => w.flow !== first.vfx.water[i].flow && (!w.visible || w.renders > first.vfx.water[i].renders)), 'All water flows and visible reflections refresh');
+    assert(next.vfx.water.filter(w => !w.visible).every(w => w.renders === first.vfx.water.find(f => f.name === w.name).renders), 'Hidden reflections retain their cached image');
     report.smokeCounts = smokeCounts; report.effects = next.vfx;
     await page.screenshot({ path: `output/playwright/c005-${first.renderer}-default.png` });
     const canvas = await page.locator('#renderCanvas').boundingBox();
